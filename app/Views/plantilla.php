@@ -19,7 +19,7 @@
               <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse justify-content-end text-center me-4 " id="navbarTogglerDemo02">
+              <div class="collapse navbar-collapse justify-content-end text-center me-1 " id="navbarTogglerDemo02">
                 <ul class="navbar-nav mb-2 mb-lg-0 text-white">
                   <li class="nav-item">
                     <a class="nav-link text-white" href="#">Productos</a>
