@@ -1,8 +1,9 @@
-<footer class="container-fluid bg-dark mt-5">
+</main>
+<footer class="container-fluid bg-dark mt-auto">
     <div class="row">
         <div class="col">
             <div class="d-flex flex-column justify-content-center align-items-center">
-                <div class="social gap-2 col w-100 d-flex flex-row justify-content-center">
+                <div class="social gap-2 col w-100 d-flex flex-row justify-content-center mt-2">
                     <p class="text-white d-none d-sm-block">______________________________</p>
                     <a class="text-white" href="https://google.com"><i class="bi bi-instagram"></i></a>
                     <a class="text-white" href="https://google.com"><i class="bi bi-linkedin"></i></a>
@@ -11,7 +12,7 @@
                 </div>
                 <div class="col d-flex flex-column flex-sm-row justify-content-center align-items-center">
                     <p class="text-white mb-0">Copyrights©2024</p>
-                    <p class="text-white ms-2 mb-0 mb-sm-0">Development by <a class="text-white text-decoration-none" href="">Vargas Jonatan</a></p>
+                    <p class="text-white ms-2 mb-0 mb-sm-0">Development by<a class="text-white text-decoration-none" href="">Vargas Jonatan</a></p>
                 </div>
             </div>
         </div>

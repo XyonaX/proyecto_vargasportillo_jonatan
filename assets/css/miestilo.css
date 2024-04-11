@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(90deg, rgba(130,117,255,1) 0%, rgba(107,4,253,1) 35%, rgba(44,0,118,1) 100%);
+    background-image: linear-gradient(90deg, rgba(130,117,255,1) 0%, rgba(107,4,253,1) 35%, rgba(44,0,118,1) 100%);
     overflow-x: hidden;
 }
 
@@ -16,7 +16,7 @@ body {
 nav{
     background: linear-gradient(90deg, rgba(130,117,255,1) 0%, rgba(107,4,253,1) 35%, rgba(44,0,118,1) 100%);
     border-bottom: 1px solid transparent; 
-    border-image: linear-gradient(to right, #7916ff, #d9ceff) 1;
+    border-image: linear-gradient(to right, #d9ceff,  #7916ff) 1;
     border-bottom-left-radius: 2px; /* Redondea la esquina inferior izquierda */
     border-bottom-right-radius: 2px;
 }
@@ -25,6 +25,7 @@ nav{
     color: #f3f1ff;
     font-weight: 600 !important;
 }
+
 
 .nav-link:hover {
     color: #843dff;
@@ -40,27 +41,68 @@ nav{
     width: 40px;
 }
 
-.carousel-item > img{
-    width: 200px;
+.carousel-item img{
+    width: 400px !important;
+    height: 600px !important;
 }
 
-body > .hero-section {
+section {
     color: #f3f1ff;
 }
 
-body .hero-section #button a {
+.hero-section #button a {
     background-color: #7916ff !important;
     border: 1px solid #2c0076;
     color: #f3f1ff;
     font-weight: 500;
 }
 
-body .hero-section #button a:hover {
+.hero-section #button a:hover {
     background-color: #2c0076 !important;
 }
 
+.features-section .card{
+    color: #f3f1ff;
+    background-color: #2c0076;
+    border: 1px solid #d9ceff;
+    width: auto;
+}
 
-body footer{
+.features-section .card svg{
+    fill: #d9ceff;
+    background-color: #7916ff;
+}
+
+.testimonials .card{
+    background-color: #2c0076 ;
+    color: #f3f1ff;
+    height: auto;
+    width: auto;
+} 
+
+.testimonials .card .blockquote-footer{
+    color: #f3f1ff !important;
+    margin-top: auto;
+}
+
+.about-section p{
+    text-align: justify;
+    line-height: 2;
+    font-size: 18px;
+}
+.team-section .card{
+    background-image: linear-gradient(0deg,rgba(107,4,253,1) 0%, rgba(44,0,118,1) 100%);
+    color: #f3f1ff;
+    border: 1px solid #d9ceff;
+    border-radius: 10px;
+}
+
+.team-section img {
+    max-width: 30%;
+}
+
+
+footer{
     background: linear-gradient(90deg, rgba(130,117,255,1) 0%, rgba(107,4,253,1) 35%, rgba(44,0,118,1) 100%);
     border-top: 2px solid transparent; 
     border-image: linear-gradient(to right, #7916ff, #d9ceff) 1;

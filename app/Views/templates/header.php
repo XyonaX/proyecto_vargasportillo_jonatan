@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
-<body>
+<body class="min-vh-100">
     <header class="conteiner-fluid">
         <div class="row">
             <div class="col">
@@ -29,7 +29,7 @@
                                         <a class="nav-link" href="<?php echo base_url('/') ?>">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">About</a>
+                                        <a class="nav-link" href="<?php echo base_url('/about'); ?>">About</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">Contact</a>
