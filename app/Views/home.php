@@ -2,37 +2,80 @@
   <section class="hero-section d-flex flex-column align-items-center justify-content-center mt-3 container-fluid animate__animated animate__fadeIn">
     <div class="container-fluid">
       <div class="row justify-content-center align-items-center">
-        <div class="col-lg-6 text-center" id="button">
+        <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center" id="button">
           <h1 class="animate__animated animate__fadeInDown">Welcome to UnnePhones</h1>
           <p class="animate__animated animate__fadeInUp">Explore the latest smartphones and cutting-edge technologies.</p>
           <a href="<?php echo base_url('/store') ?>" class="btn btn-primary">Shop Now</a>
         </div>
       </div>
     </div>
-    <div id="carouselExampleControls" class="carousel slide mt-4" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="assets/images/iphone.webp" class="d-none d-sm-block mx-auto w-sm-100 img-fluid " alt="Slide 1">
-        </div>
-        <div class="carousel-item">
-          <img src="assets/images/xiaomi.webp" class="d-none d-sm-block mx-auto w-sm-100 img-fluid" alt="Slide 2">
-        </div>
-        <div class="carousel-item">
-          <img src="assets/images/samsung.webp" class="d-none d-sm-block mx-auto w-sm-100 img-fluid" alt="Slide 3">
+    <div class="container-fluid">
+      <div class="row">
+        <div id="carouselExampleControls" class="carousel slide mt-4 d-none d-md-block" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/images/optimized-format.webp" class="mx-auto w-100 img-fluid" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/optimized-format2.webp" class="mx-auto w-100 img-fluid" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/optimized-format3.webp" class="mx-auto w-100 img-fluid" alt="Slide 3">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
+
+    <section class="featured-products my-5">
+      <div class="container-fluid">
+        <h2 class="text-center">Featured Products</h2>
+        <div class="row">
+          <!-- Productos -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="product-card d-flex justify-content-center align-items-center flex-column">
+              <img src="assets/images/Samsung_S23_FE.webp" class="img-fluid card-img" alt="Producto 1">
+              <h3 class="mt-2">Samsung s23 FE</h3>
+              <p class="">El Samsung Galaxy S23 FE es un smartphone de alta gama con pantalla AMOLED, potente rendimiento,
+                cámaras versátiles y características premium como resistencia al agua y carga inalámbrica.</p>
+              <a href="#" class="btn btn-primary mb-2">Ver detalles</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="product-card d-flex justify-content-center align-items-center flex-column">
+              <img src="assets/images/i_Phone_14_Starlight.webp" class="img-fluid card-img" alt="Producto 2">
+              <h3>Iphone 14</h3>
+              <p>El iPhone 14 es el último lanzamiento de Apple que combina un diseño elegante con un potente rendimiento.
+                Con una pantalla OLED de alta calidad, cámaras mejoradas y características innovadoras, el iPhone 14 ofrece una experiencia excepcional
+                para los usuarios exigentes.</p>
+              <a href="#" class="btn btn-primary mb-2">Ver detalles</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="product-card d-flex justify-content-center align-items-center flex-column">
+              <img src="assets/images/Samsung_Galaxy_Z_Flip5.webp" class="img-fluid card-img" alt="Producto 3">
+              <h3>Samsung Z Flip5</h3>
+              <p>El Samsung Z Flip 5 es un smartphone innovador que combina un diseño elegante con una funcionalidad única.
+                Con su pantalla plegable, el Z Flip 5 ofrece una experiencia versátil para los usuarios.
+                Con características de alta gama y un diseño premium.</p>
+              <a href="#" class="btn btn-primary mb-2">Ver detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </section>
   <section class="features-section animate__animated animate__fadeIn">
     <div class="container-fluid mt-5">
+      <h2 class="text-center my-5">Features</h2>
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-4 mb-4">
@@ -96,7 +139,7 @@
     <div class="container-fluid py-5">
       <h2 class="text-center mb-5">Customer Testimonials</h2>
       <div class="row">
-        <div class="col-lg-4 mb-2">
+        <div class="col-lg-4 mb-1">
           <div class="card text-center">
             <div class="card-body ">
               <blockquote class="blockquote mb-0">
@@ -106,7 +149,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 mb-2">
+        <div class="col-lg-4 mb-1">
           <div class="card text-center">
             <div class="card-body">
               <blockquote class="blockquote mb-0">
@@ -118,9 +161,9 @@
         </div>
         <div class="col-lg-4">
           <div class="card text-center">
-            <div class="card-body mb-2">
+            <div class="card-body mb-0">
               <blockquote class="blockquote mb-0">
-                <p class="text-wrap">A great variety of products at a good price and the service was very friendly. Very satisfied with my purchase!</p>
+                <p class="text-wrap">A great variety of products at a good price and the service was very friendly. Very satisfied with my purchase</p>
                 <footer class="blockquote-footer">Carlos Fernández</footer>
               </blockquote>
             </div>

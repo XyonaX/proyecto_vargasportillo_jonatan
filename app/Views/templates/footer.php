@@ -1,13 +1,13 @@
 </main>
-<footer class="container-fluid bg-dark mt-auto">
+<footer class="container-fluid bg-dark mt-auto w">
     <div class="row">
         <div class="col">
             <div class="d-flex flex-column justify-content-center align-items-center">
                 <div class="social gap-2 col w-100 d-flex flex-row justify-content-center mt-2">
                     <p class="text-white d-none d-sm-block">______________________________</p>
-                    <a class="text-white" href="https://google.com"><i class="bi bi-instagram"></i></a>
-                    <a class="text-white" href="https://google.com"><i class="bi bi-linkedin"></i></a>
-                    <a class="text-white" href="https://google.com"><i class="bi bi-twitter"></i></a>
+                    <a class="text-white" href="https://google.com" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a class="text-white" href="https://google.com" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    <a class="text-white" href="https://google.com" target="_blank"><i class="bi bi-twitter"></i></a>
                     <p class="text-white d-none d-sm-block">______________________________</p>
                 </div>
                 <div class="col d-flex flex-column flex-sm-row justify-content-center align-items-center">

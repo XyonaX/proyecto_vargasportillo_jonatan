@@ -35,38 +35,32 @@
                         </div>
                     </div>
                 </div>
-                <!-- Agrega más miembros del equipo según sea necesario -->
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="container">
+    <section class="stores-section">
+        <div class="container-fluid">
             <h2 class="section-title text-center mb-5">Our Stores</h2>
             <div class="row animate__animated animate__fadeInBottomLeft justify-content-center align-items-center">
-                <!-- Sucursal 1 -->
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Nombre de la Sucursal</h5>
-                            <p class="card-text">Dirección de la sucursal</p>
-                            <p class="card-text">Teléfono de contacto</p>
-                            <!-- Agrega más información relevante sobre la sucursal -->
+                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title">UnnePhones 2</h5>
+                            <p class="card-text"><i class="bi bi-geo-alt"></i> Calle 123</p>
+                            <p class="card-text">123456</p>
                         </div>
                     </div>
                 </div>
-                <!-- Sucursal 2 -->
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Nombre de la Sucursal</h5>
-                            <p class="card-text">Dirección de la sucursal</p>
-                            <p class="card-text">Teléfono de contacto</p>
-                            <!-- Agrega más información relevante sobre la sucursal -->
+                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="card-title">UnnePhones 2</h5>
+                            <p class="card-text"><i class="bi bi-geo-alt"></i> Calle 123456</p>
+                            <p class="card-text">1374218</p>
                         </div>
                     </div>
                 </div>
-                <!-- Agrega más sucursales según sea necesario -->
             </div>
         </div>
     </section>
