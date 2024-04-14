@@ -49,6 +49,16 @@ p{
     height: 340px !important;
 }
 
+.carrousel-text {
+    left: 16%;
+    top: 50%;
+}
+
+.carrousel-text p {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2c0076;
+}
 section {
     color: #f3f1ff;
 }

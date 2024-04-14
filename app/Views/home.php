@@ -14,13 +14,37 @@
         <div id="carouselExampleControls" class="carousel slide mt-4 d-none d-md-block" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="assets/images/optimized-format.webp" class="mx-auto w-100 img-fluid" alt="Slide 1">
+              <div class="position-relative">
+                <div class="carrousel-text d-none d-lg-block position-absolute translate-middle-y">
+                  <p>Lo mejor de Samsung</p>
+                  <p>con beneficios exclusivos</p>
+                  <p>Hasta 12 cuotas sin interés y por tener</p>
+                  <p>Conexión Total disfrutá 10% OFF extra</p>
+                </div>
+                <img src="assets/images/optimized-format.webp" class="mx-auto w-100 img-fluid" alt="Slide 1">
+              </div>
             </div>
             <div class="carousel-item">
-              <img src="assets/images/optimized-format2.webp" class="mx-auto w-100 img-fluid" alt="Slide 2">
+              <div class="position-relative">
+                <div class="carrousel-text d-none d-lg-block position-absolute translate-middle-y">
+                  <p>Ahorrá hasta $800.000 en tu próximo</p>
+                  <p>celu motorola</p>
+                  <p>las rebajas que estabas esperando llegaron</p>
+                  <p>no las dejes pasar!</p>
+                </div>
+                <img src="assets/images/optimized-format2.webp" class="mx-auto w-100 img-fluid" alt="Slide 2">
+              </div>
             </div>
             <div class="carousel-item">
-              <img src="assets/images/optimized-format3.webp" class="mx-auto w-100 img-fluid" alt="Slide 3">
+              <div class="position-relative">
+                <div class="carrousel-text d-none d-lg-block position-absolute translate-middle-y">
+                  <p>Conseguí tu nuevo celu con</p>
+                  <p>descuentos imperdibles</p>
+                  <p>Aprovechá hasta 3 cuotas sin interés con tarjetas</p>
+                  <p>y 10% OFF extra por tener Conexión Total</p>
+                </div>
+                <img src="assets/images/optimized-format3.webp" class="mx-auto w-100 img-fluid" alt="Slide 3">
+              </div>
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -37,22 +61,22 @@
 
     <section class="featured-products my-5">
       <div class="container-fluid">
-        <h2 class="text-center">Featured Products</h2>
+        <h2 class="text-center">Productos Destacados</h2>
         <div class="row">
           <!-- Productos -->
           <div class="col-lg-4 col-md-6 mb-4">
-            <div class="product-card d-flex justify-content-center align-items-center flex-column">
+            <div class="product-card d-flex justify-content-center align-items-center flex-column p-1">
               <img src="assets/images/Samsung_S23_FE.webp" class="img-fluid card-img" alt="Producto 1">
-              <h3 class="mt-2">Samsung s23 FE</h3>
+              <h4 class="">Samsung s23 FE</h4>
               <p class="">El Samsung Galaxy S23 FE es un smartphone de alta gama con pantalla AMOLED, potente rendimiento,
                 cámaras versátiles y características premium como resistencia al agua y carga inalámbrica.</p>
-              <a href="#" class="btn btn-primary mb-2">Ver detalles</a>
+              <a href="#" class="btn btn-primary mt-3">Ver detalles</a>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 mb-4">
-            <div class="product-card d-flex justify-content-center align-items-center flex-column">
+            <div class="product-card d-flex justify-content-center align-items-center flex-column p-1">
               <img src="assets/images/i_Phone_14_Starlight.webp" class="img-fluid card-img" alt="Producto 2">
-              <h3>Iphone 14</h3>
+              <h4>Iphone 14</h4>
               <p>El iPhone 14 es el último lanzamiento de Apple que combina un diseño elegante con un potente rendimiento.
                 Con una pantalla OLED de alta calidad, cámaras mejoradas y características innovadoras, el iPhone 14 ofrece una experiencia excepcional
                 para los usuarios exigentes.</p>
@@ -60,9 +84,9 @@
             </div>
           </div>
           <div class="col-lg-4 col-md-6 mb-4">
-            <div class="product-card d-flex justify-content-center align-items-center flex-column">
+            <div class="product-card d-flex justify-content-center align-items-center flex-column p-1">
               <img src="assets/images/Samsung_Galaxy_Z_Flip5.webp" class="img-fluid card-img" alt="Producto 3">
-              <h3>Samsung Z Flip5</h3>
+              <h4>Samsung Z Flip5</h4>
               <p>El Samsung Z Flip 5 es un smartphone innovador que combina un diseño elegante con una funcionalidad única.
                 Con su pantalla plegable, el Z Flip 5 ofrece una experiencia versátil para los usuarios.
                 Con características de alta gama y un diseño premium.</p>
@@ -75,7 +99,7 @@
   </section>
   <section class="features-section animate__animated animate__fadeIn">
     <div class="container-fluid mt-5">
-      <h2 class="text-center my-5">Features</h2>
+      <h2 class="text-center my-5">Nos destacamos en:</h2>
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-4 mb-4">
@@ -89,8 +113,8 @@
                 </div>
                 <div class="col-md-8">
                   <div class="card-body d-flex flex-column justify-content-center">
-                    <h5 class="card-title text-center">Cutting-edge Technology</h5>
-                    <p class="card-text mt-2 text-center">Explore devices with the latest technological innovations in the market.</p>
+                    <h5 class="card-title text-center">Tecnología de Vanguardia</h5>
+                    <p class="card-text mt-2 text-center">Explora dispositivos con las últimas innovaciones tecnológicas del mercado</p>
                   </div>
                 </div>
               </div>
@@ -107,8 +131,8 @@
                 </div>
                 <div class="col-md-8">
                   <div class="card-body d-flex flex-column justify-content-center">
-                    <h5 class="card-title text-center">Exclusivity</h5>
-                    <p class="card-text mt-2 text-center ">Find exclusive models available and at a good price only at UnnePhones </p>
+                    <h5 class="card-title text-center">Exclusividad</h5>
+                    <p class="card-text mt-2 text-center">Encuentra modelos exclusivos disponibles y a buen precio solo en UnnePhones</p>
                   </div>
                 </div>
               </div>
@@ -124,8 +148,8 @@
                 </div>
                 <div class="col-md-8">
                   <div class="card-body d-flex flex-column justify-content-center">
-                    <h5 class="card-title text-center">Special Offers</h5>
-                    <p class="card-text mt-2 text-center">Take advantage of unique promotions and discounts for our customers.</p>
+                    <h5 class="card-title text-center">Ofertas Especiales</h5>
+                    <p class="card-text mt-2 text-center">Aprovecha promociones y descuentos únicos para nuestros clientes</p>
                   </div>
                 </div>
               </div>
@@ -137,13 +161,13 @@
   </section>
   <section class="testimonials animate__animated animate__backInLeft">
     <div class="container-fluid py-5">
-      <h2 class="text-center mb-5">Customer Testimonials</h2>
+      <h2 class="text-center mb-5">Testimonio de Clientes</h2>
       <div class="row">
         <div class="col-lg-4 mb-1">
           <div class="card text-center">
             <div class="card-body ">
               <blockquote class="blockquote mb-0">
-                <p class="text-wrap">Excellent service, my order arrived much earlier than expected and in perfect condition. Recommended!</p>
+                <p class="text-wrap">Excelente servicio, mi pedido llegó mucho antes de lo esperado y en perfecto estado. Les recomiendo mucho!</p>
                 <footer class="blockquote-footer">Juan Pérez</footer>
               </blockquote>
             </div>
@@ -153,7 +177,7 @@
           <div class="card text-center">
             <div class="card-body">
               <blockquote class="blockquote mb-0">
-                <p class="text-wrap">Incredible quality in the products and exceptional customer service. I will definitely buy here again.</p>
+                <p class="text-wrap">Increíble calidad en los productos y un servicio al cliente excepcional. Definitivamente volveré a comprar aquí.</p>
                 <footer class="blockquote-footer">María López</footer>
               </blockquote>
             </div>
@@ -163,7 +187,7 @@
           <div class="card text-center">
             <div class="card-body mb-0">
               <blockquote class="blockquote mb-0">
-                <p class="text-wrap">A great variety of products at a good price and the service was very friendly. Very satisfied with my purchase</p>
+                <p class="text-wrap">Una gran variedad de productos a buen precio y la atención fue muy amable. ¡Muy satisfecho con mi compra!</p>
                 <footer class="blockquote-footer">Carlos Fernández</footer>
               </blockquote>
             </div>
