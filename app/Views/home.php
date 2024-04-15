@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="row justify-content-center align-items-center">
         <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center" id="button">
-          <h1 class="animate__animated animate__fadeInDown">Welcome to UnnePhones</h1>
+          <h1 class="animate__animated animate__fadeInDown">Bienvenidos a UnnePhones</h1>
           <p class="animate__animated animate__fadeInUp">Explore the latest smartphones and cutting-edge technologies.</p>
           <a href="<?php echo base_url('/store') ?>" class="btn btn-primary">Shop Now</a>
         </div>
