@@ -35,7 +35,7 @@
                                         <a class="nav-link" href="<?php echo base_url('/contact'); ?>">Contacto</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="<?php echo base_url('/store'); ?>">Store</a>
+                                        <a class="nav-link" href="<?php echo base_url('/store'); ?>">Comercializacion</a>
                                     </li>
                                 </ul>
                             </div>
