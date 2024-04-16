@@ -6,7 +6,8 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('templates/header').view('home').view('templates/footer');
+        $data['titulo'] = 'UnnePhone';
+        return view('templates/header',$data).view('home').view('templates/footer');
     }
 
 }

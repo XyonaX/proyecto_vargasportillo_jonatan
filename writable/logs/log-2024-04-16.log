@@ -1,0 +1,22 @@
+CRITICAL - 2024-04-16 13:44:49 --> Undefined variable $titulo
+in APPPATH/Views/templates/header.php on line 7.
+ 1 APPPATH/Views/templates/header.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', 'APPPATH/Views/templates/header.php', 7)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/templates/header.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH/Controllers/Store.php(9): view('templates/header')
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Store->index()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-16 13:44:53 --> Undefined variable $titulo
+in APPPATH/Views/templates/header.php on line 7.
+ 1 APPPATH/Views/templates/header.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', 'APPPATH/Views/templates/header.php', 7)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/templates/header.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH/Controllers/Store.php(9): view('templates/header')
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Store->index()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

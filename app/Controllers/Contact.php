@@ -5,8 +5,8 @@ namespace App\Controllers;
 class Contact extends BaseController{
 
     public function index(){
-
-        return view('templates/header').view('contact').view('templates/footer');
+        $data['titulo'] = 'Contacto';
+        return view('templates/header',$data).view('contact').view('templates/footer');
     }
 
 }
