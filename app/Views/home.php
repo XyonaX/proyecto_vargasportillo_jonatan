@@ -68,7 +68,7 @@
             <div class="product-card d-flex justify-content-center align-items-center flex-column p-1">
               <img src="assets/images/Samsung_S23_FE.webp" class="img-fluid card-img" alt="Producto 1">
               <h4 class="">Samsung s23 FE</h4>
-              <p class="">El Samsung Galaxy S23 FE es un smartphone de alta gama con pantalla AMOLED, potente rendimiento,
+              <p class="card-cel-text">El Samsung Galaxy S23 FE es un smartphone de alta gama con pantalla AMOLED, potente rendimiento,
                 cámaras versátiles y características premium como resistencia al agua y carga inalámbrica.</p>
               <a href="#" class="btn btn-primary mt-3">Ver detalles</a>
             </div>
@@ -77,7 +77,7 @@
             <div class="product-card d-flex justify-content-center align-items-center flex-column p-1">
               <img src="assets/images/i_Phone_14_Starlight.webp" class="img-fluid card-img" alt="Producto 2">
               <h4>Iphone 14</h4>
-              <p>El iPhone 14 es el último lanzamiento de Apple que combina un diseño elegante con un potente rendimiento.
+              <p class="card-cel-text">El iPhone 14 es el último lanzamiento de Apple que combina un diseño elegante con un potente rendimiento.
                 Con una pantalla OLED de alta calidad, cámaras mejoradas y características innovadoras, el iPhone 14 ofrece una experiencia excepcional
                 para los usuarios exigentes.</p>
               <a href="#" class="btn btn-primary mb-2">Ver detalles</a>
@@ -87,7 +87,7 @@
             <div class="product-card d-flex justify-content-center align-items-center flex-column p-1">
               <img src="assets/images/Samsung_Galaxy_Z_Flip5.webp" class="img-fluid card-img" alt="Producto 3">
               <h4>Samsung Z Flip5</h4>
-              <p>El Samsung Z Flip 5 es un smartphone innovador que combina un diseño elegante con una funcionalidad única.
+              <p class="card-cel-text">El Samsung Z Flip 5 es un smartphone innovador que combina un diseño elegante con una funcionalidad única.
                 Con su pantalla plegable, el Z Flip 5 ofrece una experiencia versátil para los usuarios.
                 Con características de alta gama y un diseño premium.</p>
               <a href="#" class="btn btn-primary mb-2">Ver detalles</a>

@@ -24,7 +24,7 @@ nav{
     border-bottom-right-radius: 2px;
 }
 
-p{
+.card-cel-text{
     text-align: justify;
 }
 
@@ -36,6 +36,15 @@ p{
 
 .nav-link:hover {
     color: #843dff;
+    text-decoration: underline;
+}
+
+.links{
+    color: #f3f1ff;
+    text-decoration: none;
+}
+
+.links:hover{
     text-decoration: underline;
 }
 
@@ -156,6 +165,10 @@ footer{
     border-top-right-radius: 2px;
 }
 
+textarea{
+    resize: none;
+}
+
 
 .card-img{
     transition: transform 0.5s ease, opacity 0.5s ease;
@@ -163,4 +176,8 @@ footer{
 .card-img:hover{
     transform: scale(1.1);
     opacity: 0.6;
+}
+
+.mapa iframe{
+    border-radius: 40px;
 }
