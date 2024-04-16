@@ -26,13 +26,13 @@
                             <div class="collapse navbar-collapse justify-content-end text-center me-1 " id="navbarTogglerDemo02">
                                 <ul class="navbar-nav mb-2 mb-lg-0 text-white">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="<?php echo base_url('/') ?>">Home</a>
+                                        <a class="nav-link" href="<?php echo base_url('/') ?>">Incio</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="<?php echo base_url('/about'); ?>">About</a>
+                                        <a class="nav-link" href="<?php echo base_url('/about'); ?>">Nosotros</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="<?php echo base_url('/contact'); ?>">Contact</a>
+                                        <a class="nav-link" href="<?php echo base_url('/contact'); ?>">Contacto</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="<?php echo base_url('/store'); ?>">Store</a>
