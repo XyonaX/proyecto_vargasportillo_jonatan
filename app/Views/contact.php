@@ -42,12 +42,11 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="row mapa">
+                <div class="row mb-4">
+                    <div class="mapa">
                         <iframe class="ms-4" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5374.581487886152!2d-58.84789644130185!3d-27.476678967893516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1713272692862!5m2!1ses!2sar" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
-                <div class="col-md-6"></div>
             </div>
         </div>
     </section>

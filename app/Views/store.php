@@ -1,2 +1,6 @@
+<main class="min-vh-100">
+    <section class="comercializacion">
 
-<h1 class="min-vh-100 mt-5">Hello</h1>
+        <h1>Hello</h1>
+    </section>
+</main>

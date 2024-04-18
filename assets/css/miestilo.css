@@ -38,6 +38,12 @@ nav{
     color: #843dff;
     text-decoration: underline;
 }
+.active {
+    color: #7916ff !important;
+    text-decoration: underline !important;
+    background-color: #f3f1ff;
+    border-radius: 10px;
+}
 
 .links{
     color: #f3f1ff;
@@ -47,6 +53,7 @@ nav{
 .links:hover{
     text-decoration: underline;
 }
+
 
 .navbar-toggler{
     background-color: #701cfe !important;
