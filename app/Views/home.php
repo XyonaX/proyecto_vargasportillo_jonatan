@@ -5,7 +5,7 @@
         <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center" id="button">
           <h1 class="animate__animated animate__fadeInDown">Bienvenidos a UnnePhones</h1>
           <p class="animate__animated animate__fadeInUp">Explora los ultimos smartphones y tecnologias de punta.</p>
-          <a href="<?php echo base_url('/store') ?>" class="btn btn-primary">Compra Ahora</a>
+          <a href="<?php echo base_url('/store') ?>" class="btn btn-primary">Compra</a>
         </div>
       </div>
     </div>
@@ -112,7 +112,7 @@
                   </svg>
                 </div>
                 <div class="col-md-8">
-                  <div class="card-body d-flex flex-column justify-content-center">
+                  <div class="d-flex flex-column justify-content-center">
                     <h5 class="card-title text-center">Tecnología de Vanguardia</h5>
                     <p class="card-text mt-2 text-center">Explora dispositivos con las últimas innovaciones tecnológicas del mercado</p>
                   </div>
@@ -130,7 +130,7 @@
                   </svg>
                 </div>
                 <div class="col-md-8">
-                  <div class="card-body d-flex flex-column justify-content-center">
+                  <div class="d-flex flex-column justify-content-center">
                     <h5 class="card-title text-center">Exclusividad</h5>
                     <p class="card-text mt-2 text-center">Encuentra modelos exclusivos disponibles y a buen precio solo en UnnePhones</p>
                   </div>
@@ -147,7 +147,7 @@
                   </svg>
                 </div>
                 <div class="col-md-8">
-                  <div class="card-body d-flex flex-column justify-content-center">
+                  <div class="d-flex flex-column justify-content-center">
                     <h5 class="card-title text-center">Ofertas Especiales</h5>
                     <p class="card-text mt-2 text-center">Aprovecha promociones y descuentos únicos para nuestros clientes</p>
                   </div>

@@ -1,0 +1,33 @@
+CRITICAL - 2024-04-19 15:05:22 --> Undefined variable $titulo
+in APPPATH/Views/loading.php on line 7.
+ 1 APPPATH/Views/loading.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', 'APPPATH/Views/loading.php', 7)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/loading.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('loading', [], true)
+ 5 APPPATH/Controllers/Home.php(10): view('loading')
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-19 15:05:29 --> Undefined variable $titulo
+in APPPATH/Views/loading.php on line 7.
+ 1 APPPATH/Views/loading.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', 'APPPATH/Views/loading.php', 7)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/loading.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('loading', [], true)
+ 5 APPPATH/Controllers/Home.php(10): view('loading')
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-19 15:05:30 --> Undefined variable $titulo
+in APPPATH/Views/loading.php on line 7.
+ 1 APPPATH/Views/loading.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', 'APPPATH/Views/loading.php', 7)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/loading.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('loading', [], true)
+ 5 APPPATH/Controllers/Home.php(10): view('loading')
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

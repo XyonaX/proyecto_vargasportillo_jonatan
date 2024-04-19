@@ -1,5 +1,5 @@
 <main class="min-vh-100">
-    <section class="contact-section">
+    <section class="contact-section animate__animated animate__fadeIn">
         <div class="container-fluid mt-5 d-flex flex-column justify-content-center align-items-center">
             <h2 class="mb-4">Información de Contacto</h2>
             <div class="row justify-content-center align-items-center">
@@ -27,11 +27,11 @@
                     <form class="p-2 border rounded-2 mb-3">
                         <div class="mb-3">
                             <label for="Nombre Completo" class="form-label">Nombre Completo</label>
-                            <input type="text" class="form-control" placeholder="Juan Perez">
+                            <input type="text" name="nombre" class="form-control" placeholder="Juan Perez">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Correo Electronico</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Juanp@gmail.com">
+                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Juanp@gmail.com">
                         </div>
                         <div class="mb-3 d-flex flex-column">
                             <label for="consultas" class="form-label">Ingrese su consulta</label>

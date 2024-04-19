@@ -1,7 +1,7 @@
 <main class="min-vh-100">
     <section class="terminos">
         <div class="container w-75">
-            <div class="row justify-content-center align-items-center">
+            <div class="row justify-content-center align-items-center animate__animated animate__fadeIn">
                 <div class="col d-flex flex-column justify-content-center align-items-center">
                     <h2 class="mt-4">Aviso Legal</h2>
                     <div class="d-flex flex-column justify-content-center align-items-center mt-4">
