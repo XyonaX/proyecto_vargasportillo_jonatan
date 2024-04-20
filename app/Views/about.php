@@ -41,7 +41,7 @@
                         </p>
                     </div>
                     <div class="col-md-6 d-flex justify-content-center align-items-center">
-                        <img src="https://img.freepik.com/foto-gratis/disenadores-graficos-reunion_1170-2002.jpg?t=st=1713134376~exp=1713137976~hmac=f5dc3feda1e74e4ca201d786e91c6f87781e8277af6406b59a409b9bfcc51f9e&w=1480" class="img-thumbnail w-100" alt="imagen-de-equipo">
+                        <img src="https://opem.b-cdn.net/wp-content/uploads/2023/05/ventajas-del-trabajo-en-equipo.jpg" class="img-thumbnail w-100" alt="imagen-de-equipo">
                     </div>
                 </div>
                 <div class="row my-4">
