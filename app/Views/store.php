@@ -1,5 +1,5 @@
 <main class="min-vh-100">
-    <section class="comercializacion">
+    <section class="comercializacion animate__animated animate__fadeIn">
         <div class="container mt-4">
             <div class="row">
                 <h2 class="text-center">Comercialización de UnnePhones</h2>
