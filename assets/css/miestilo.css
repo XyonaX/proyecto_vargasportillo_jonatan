@@ -22,7 +22,7 @@ nav{
     background: linear-gradient(90deg, rgba(130,117,255,1) 0%, rgba(107,4,253,1) 35%, rgba(44,0,118,1) 100%);
     border-bottom: 1px solid transparent; 
     border-image: linear-gradient(to right, #d9ceff,  #7916ff) 1;
-    border-bottom-left-radius: 2px; /* Redondea la esquina inferior izquierda */
+    border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
 }
 

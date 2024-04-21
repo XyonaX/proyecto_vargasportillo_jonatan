@@ -5,7 +5,7 @@
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-6">
                     <div class="row">
-                        <div class="col-md-6 mb-4">
+                        <div class="col-md-6 mb-4 text-center text-md-start">
                             <h4>Datos Corporativos</h4>
                             <p><strong>Titular de la Empresa:</strong> Juan Pérez</p>
                             <p><strong>Razón Social:</strong> UnnePhones S.A.</p>
@@ -13,7 +13,7 @@
                             <p><strong>Teléfono:</strong> +54 11 1234-5678</p>
                             <p><strong>Email:</strong> contacto@unnephones.com.ar</p>
                         </div>
-                        <div class="col-md-6 mb-4">
+                        <div class="col-md-6 mb-4 text-center text-md-start">
                             <h4>Otros medios de contacto</h4>
                             <p><strong>Sitio Web:</strong> <a class="links" href="http://www.unnephones.com.ar">www.unnephones.com.ar</a></p>
                             <div class="gap-2">
