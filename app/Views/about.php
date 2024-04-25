@@ -62,7 +62,7 @@
                             <img src="assets/images/ventas.webp" class="card-img-top img-fluid fixed-height-img" alt="Nombre del miembro 2">
                             <div class="card-body p-3">
                                 <h5 class="card-title text-center">María López</h5>
-                                <p class="card-text">Directora de Operaciones. María supervisa las operaciones diarias de UnnePhones con eficiencia y profesionalismo.</p>
+                                <p class="card-text">Directora de Operaciones. María supervisa las operaciones diarias de UnnePhones con profesionalismo.</p>
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                             <img src="assets/images/marketing.webp" class="card-img-top img-fluid fixed-height-img" alt="Nombre del miembro 3">
                             <div class="card-body p-3">
                                 <h5 class="card-title text-center">Carlos Fernández</h5>
-                                <p class="card-text">Gerente de Marketing. Carlos lidera las estrategias de marketing de UnnePhones con creatividad y enfoque en el cliente.</p>
+                                <p class="card-text">Gerente de Marketing. Carlos lidera las estrategias de marketing de UnnePhones con creatividad y enfoque.</p>
                             </div>
                         </div>
                     </div>

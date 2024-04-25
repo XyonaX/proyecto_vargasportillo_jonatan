@@ -5,7 +5,7 @@
         <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center" id="button">
           <h1 class="animate__animated animate__fadeInDown">Bienvenidos a UnnePhones</h1>
           <p class="animate__animated animate__fadeInUp">Explora los ultimos smartphones y tecnologias de punta.</p>
-          <a href="<?php echo base_url('/store') ?>" class="btn btn-primary">Compra</a>
+          <a href="<?php echo base_url('/store') ?>" class="btn btn-primary">Comprar</a>
         </div>
       </div>
     </div>
@@ -168,7 +168,7 @@
             <div class="card-body ">
               <blockquote class="blockquote mb-0">
                 <p class="text-wrap">Excelente servicio, mi pedido llegó mucho antes de lo esperado y en perfecto estado. Les recomiendo mucho!</p>
-                <footer class="blockquote-footer">Juan Pérez</footer>
+                <footer class="blockquote-footer">Juan Gomez</footer>
               </blockquote>
             </div>
           </div>
