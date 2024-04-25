@@ -12,7 +12,7 @@
                     </div>
                     <div class="col d-flex flex-column flex-sm-row justify-content-center align-items-center">
                         <p class="text-white mb-0">Copyrights©2024</p>
-                        <p class="text-white ms-2 mb-0 mb-sm-0">Development by <a class="text-white text-decoration-none" href="https://instagram.com/xyona10x">Vargas Jonatan</a></p>
+                        <p class="text-white ms-2 mb-0 mb-sm-0">Development by <a class="text-white text-decoration-none" href="">Vargas Jonatan</a></p>
                     </div>
                 </div>
             </div>

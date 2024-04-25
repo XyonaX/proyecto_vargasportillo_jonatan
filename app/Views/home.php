@@ -168,7 +168,7 @@
             <div class="card-body ">
               <blockquote class="blockquote mb-0">
                 <p class="text-wrap">Excelente servicio, mi pedido llegó mucho antes de lo esperado y en perfecto estado. Les recomiendo mucho!</p>
-                <footer class="blockquote-footer">Juan Gomez</footer>
+                <footer class="blockquote-footer">Juan Pérez</footer>
               </blockquote>
             </div>
           </div>
