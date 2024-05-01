@@ -44,6 +44,12 @@
                                         <li class="nav-item">
                                             <a class="nav-link <?php echo (current_url() == base_url('/terms')) ? 'active' : ''; ?>" href="<?php echo base_url('/terms'); ?>">Terms&Usos</a>
                                         </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link <?php echo (current_url() == base_url('/login')) ? 'active' : ''; ?>" href="<?php echo base_url('/login'); ?>">Login</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link <?php echo (current_url() == base_url('/register')) ? 'active' : ''; ?>" href="<?php echo base_url('/register'); ?>">Registro</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
