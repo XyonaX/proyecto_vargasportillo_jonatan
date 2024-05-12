@@ -5,7 +5,7 @@
         'class' => 'email',
         'id' => 'loginForm'
     ];
-    echo form_open('', $attributes);
+    echo form_open('POST', $attributes);
 
 
     ?>

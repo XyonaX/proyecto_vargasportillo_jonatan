@@ -39,12 +39,6 @@
                                             <a class="nav-link <?php echo (current_url() == base_url('/contact')) ? 'active' : ''; ?>" href="<?php echo base_url('/contact'); ?>">Contacto</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link <?php echo (current_url() == base_url('/store')) ? 'active' : ''; ?>" href="<?php echo base_url('/store'); ?>">Comercializacion</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link <?php echo (current_url() == base_url('/terms')) ? 'active' : ''; ?>" href="<?php echo base_url('/terms'); ?>">Terms&Usos</a>
-                                        </li>
-                                        <li class="nav-item">
                                             <a class="nav-link <?php echo (current_url() == base_url('/login')) ? 'active' : ''; ?>" href="<?php echo base_url('/login'); ?>">Login</a>
                                         </li>
                                         <li class="nav-item">
