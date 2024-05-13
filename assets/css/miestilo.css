@@ -224,3 +224,7 @@ textarea{
     100% { transform: rotate(360deg); }
 }
 
+.alert {
+    text-wrap: nowrap;
+    padding: 5px;
+}
