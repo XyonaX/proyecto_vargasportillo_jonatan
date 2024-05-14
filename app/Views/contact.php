@@ -51,11 +51,12 @@
                         <?php endif; ?>
                     </div>
                     <div class="mb-3 d-flex flex-column">
-                        <?= form_label('Ingrese su consulta', 'consultas', ['class' => 'form-label']) ?>
-                        <?php if (isset($validation['consultas'])) : ?>
-                            <div class="alert alert-danger mt-1" role="alert"><?= esc($validation['consultas']) ?></div>
+                        <?= form_label('Ingrese su consulta', 'consulta', ['class' => 'form-label']) ?>
+                        <?php if (isset($validation['consulta'])) : ?>
+                            <div class="alert alert-danger mt-1" role="alert"><?= esc($validation['consulta']) ?></div>
                         <?php endif; ?>
-                        <?= form_textarea(['name' => 'consultas', 'class' => 'form-control', 'rows' => '8', 'placeholder' => 'Necesito consultar los precios...', 'maxlength' => '250', 'minlength' => '10']) ?>
+                        <?= form_textarea(['name' => 'consulta', 'class' => 'form-control', 'rows' => '8', 'placeholder' => 'Necesito consultar los precios...',
+                        'maxlength' => '250', 'minlength' => '10']) ?>
                         <!-- Mostrar mensaje de error -->
                         
                     </div>
