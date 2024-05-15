@@ -40,6 +40,16 @@ nav{
     color: #843dff;
     text-decoration: underline;
 }
+
+.login .nav-link{
+    font-weight: 400 !important;
+}
+
+.login .nav-link:hover{
+    color: #d9ceff;
+    text-decoration: none;
+}
+
 .active {
     color: #7916ff !important;
     text-decoration: underline !important;

@@ -36,7 +36,7 @@
                     <?= form_open('consultas', ['class' => 'p-2 border rounded-2 mb-3']) ?>
                     <div class="mb-3">
                         <?= form_label('Nombre Completo', 'nombre', ['class' => 'form-label']) ?>
-                        <?= form_input(['name' => 'nombre', 'class' => 'form-control', 'placeholder' => 'Juan Perez', 'maxlength' => '150']) ?>
+                        <?= form_input(['type' => 'text','name' => 'nombre', 'class' => 'form-control', 'placeholder' => 'Juan Perez', 'maxlength' => '150']) ?>
                         <!-- Mostrar mensaje de error -->
                         <?php if (isset($validation['nombre'])) : ?>
                             <div class="alert alert-danger mt-1" role="alert"><?= esc($validation['nombre']) ?></div>
@@ -55,13 +55,13 @@
                         <?php if (isset($validation['consulta'])) : ?>
                             <div class="alert alert-danger mt-1" role="alert"><?= esc($validation['consulta']) ?></div>
                         <?php endif; ?>
-                        <?= form_textarea(['name' => 'consulta', 'class' => 'form-control', 'rows' => '8', 'placeholder' => 'Necesito consultar los precios...',
+                        <?= form_textarea(['type' => 'text','name' => 'consulta', 'class' => 'form-control', 'rows' => '8', 'placeholder' => 'Necesito consultar los precios...',
                         'maxlength' => '250', 'minlength' => '10']) ?>
                         <!-- Mostrar mensaje de error -->
                         
                     </div>
                     <div class="d-flex justify-content-center">
-                        <?= form_submit('submit', 'Submit', ['class' => 'btn btn-primary']) ?>
+                        <?= form_submit('submit', 'Enviar', ['class' => 'btn btn-primary']) ?>
                     </div>
                     <?= form_close() ?>
 
