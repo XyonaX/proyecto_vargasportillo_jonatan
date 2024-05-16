@@ -36,8 +36,8 @@ $routes->get('/contact', 'Contact::index');
 $routes->get('/terms', 'Terms::index');
 $routes->get('/login', 'Users::login');
 $routes->get('/register', 'Users::register');
-$routes->post('consultas', 'Contact::add_consulta');
-$routes->post('registro', 'Users::register_user');
+$routes->post('/contact', 'Contact::add_consulta');
+$routes->post('/register', 'Users::register_user');
 
 
 
