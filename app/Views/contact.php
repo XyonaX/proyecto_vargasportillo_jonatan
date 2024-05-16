@@ -33,10 +33,10 @@
                         </div>
                     <?php endif; ?>
 
-                    <?= form_open('consultas', ['class' => 'p-2 border rounded-2 mb-3']) ?>
+                    <?= form_open('contact', ['class' => 'p-2 border rounded-2 mb-3']) ?>
                     <div class="mb-3">
                         <?= form_label('Nombre Completo', 'nombre', ['class' => 'form-label']) ?>
-                        <?= form_input(['type' => 'text','name' => 'nombre', 'class' => 'form-control', 'placeholder' => 'Juan Perez', 'maxlength' => '150']) ?>
+                        <?= form_input(['type' => 'text','name' => 'nombre', 'class' => 'form-control', 'placeholder' => 'Juan Perez', 'maxlength' => '150', 'value' => set_value('nombre')]) ?>
                         <!-- Mostrar mensaje de error -->
                         <?php if (isset($validation['nombre'])) : ?>
                             <div class="alert alert-danger mt-1" role="alert"><?= esc($validation['nombre']) ?></div>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="mb-3">
                         <?= form_label('Correo Electronico', 'email', ['class' => 'form-label']) ?>
-                        <?= form_input(['type' => 'email', 'name' => 'email', 'class' => 'form-control', 'placeholder' => 'Juanp@gmail.com']) ?>
+                        <?= form_input(['type' => 'email', 'name' => 'email', 'class' => 'form-control', 'placeholder' => 'Juanp@gmail.com' ,'value' => set_value('email')]) ?>
                         <!-- Mostrar mensaje de error -->
                         <?php if (isset($validation['email'])) : ?>
                             <div class="alert alert-danger mt-1" role="alert"><?= esc($validation['email']) ?></div>
@@ -56,7 +56,7 @@
                             <div class="alert alert-danger mt-1" role="alert"><?= esc($validation['consulta']) ?></div>
                         <?php endif; ?>
                         <?= form_textarea(['type' => 'text','name' => 'consulta', 'class' => 'form-control', 'rows' => '8', 'placeholder' => 'Necesito consultar los precios...',
-                        'maxlength' => '250', 'minlength' => '10']) ?>
+                        'maxlength' => '250', 'minlength' => '10', 'value' => set_value('consulta')]) ?>
                         <!-- Mostrar mensaje de error -->
                         
                     </div>

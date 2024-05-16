@@ -56,7 +56,7 @@ class Contact extends BaseController{
             $data['titulo'] = 'Contacto';
             $data['validation'] = $validation->getErrors();
 
-            return view('templates/header',$data).view('contact').view('templates/footer');
+            return view('templates/header',$data).view('contact',$data).view('templates/footer');
     
         }
     }
