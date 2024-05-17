@@ -3,24 +3,29 @@
 namespace App\Controllers;
 
 use App\Models\Users_model;
+use Tests\Support\Models\UserModel;
 
-class Users extends BaseController {
+class Users extends BaseController
+{
 
-    public function login() {
+    public function login()
+    {
         $data['titulo'] = 'Login';
         return view('templates/header', $data)
             . view('login')
             . view('templates/footer');
     }
 
-    public function register() {
+    public function register()
+    {
         $data['titulo'] = 'Registro';
         return view('templates/header', $data)
             . view('register')
             . view('templates/footer');
     }
 
-    public function register_user() {
+    public function register_user()
+    {
         $validation = \Config\Services::validation();
         $request = \Config\Services::request();
         $userModel = new Users_model();
@@ -88,5 +93,35 @@ class Users extends BaseController {
         return view('templates/header', $data)
             . view('register', $data)
             . view('templates/footer');
+    }
+
+    public function login_user()
+    {
+        $request = \Config\Services::request();
+        $userModel = new Users_model();
+
+
+        $email = $request->getPost('email');
+        $pass = $request->getPost('password');
+
+
+        $usuarioEncontrado = $userModel->where('usuario_email', $email)->first();
+
+        if ($usuarioEncontrado && password_verify($pass, $usuarioEncontrado['usuario_password'])) {
+            $session = session();
+
+            $session->set(
+                [
+                    'usuario_id' => $usuarioEncontrado['usuario_id'],
+                    'usuario_nombre' => $usuarioEncontrado['usuario_nombre'],
+                    'usuario_apellido' => $usuarioEncontrado['usuario_apellido'],
+                    'usuario_email' => $usuarioEncontrado['usuario_email'],
+                    'isLoggedIn' => true,
+                ]
+            );
+            return redirect()->to('/login')->with('message', 'Login exitoso!');
+        }else{
+            return redirect()->to('/login')->with('message', 'Correo electrónico o contraseña incorrectos.');
+        }
     }
 }

@@ -1,5 +1,10 @@
-<main class="min-vh-100 d-flex justify-content-center align-items-center">
-    <?= form_open('', ['class' => 'form-login p-2 border rounded-2 mb-3']) ?>
+<main class="min-vh-100 d-flex justify-content-center align-items-center flex-column">
+    <?php if (session()->getFlashdata('message')) : ?>
+        <div class="alert alert-success mt-3" role="alert">
+            <?= session()->getFlashdata('message') ?>
+        </div>
+    <?php endif; ?>
+    <?= form_open('login', ['class' => 'form-login p-2 border rounded-2 mb-3']) ?>
     <div class="mb-3">
         <?= form_label('Correo Electronico', 'email', ['class' => 'form-label']) ?>
         <?= form_input(['type' => 'email', 'name' => 'email', 'class' => 'form-control', 'placeholder' => 'Juanp@gmail.com']) ?>

@@ -38,6 +38,7 @@ $routes->get('/login', 'Users::login');
 $routes->get('/register', 'Users::register');
 $routes->post('/contact', 'Contact::add_consulta');
 $routes->post('/register', 'Users::register_user');
+$routes->post('/login', 'Users::login_user');
 
 
 
