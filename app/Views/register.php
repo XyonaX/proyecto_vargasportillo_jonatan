@@ -1,8 +1,13 @@
-<main class="min-vh-100 d-flex justify-content-center align-items-center">
-    <?= form_open('registro', ['class' => 'form-login p-2 border rounded-2 mb-3']) ?>
+<main class="min-vh-100 d-flex justify-content-center align-items-center flex-column">
+    <?php if (session()->getFlashdata('message')) : ?>
+        <div class="alert alert-success mt-3" role="alert">
+            <?= session()->getFlashdata('message') ?>
+        </div>
+    <?php endif; ?>
+    <?= form_open('register', ['class' => 'form-login p-2 border rounded-2 mb-3']) ?>
     <div class="mb-3">
         <?= form_label('Nombre', 'nombre', ['class' => 'form-label']) ?>
-        <?= form_input(['type' => 'text', 'name' => 'nombre', 'class' => 'form-control', 'placeholder' => 'Juan Doe']) ?>
+        <?= form_input(['type' => 'text', 'name' => 'nombre', 'class' => 'form-control', 'placeholder' => 'Juan Doe', 'value' => set_value('nombre')]) ?>
         <!-- Mostrar mensaje de error -->
         <?php if (isset($validation['nombre'])) : ?>
             <div class="alert alert-danger mt-1" role="alert"><?= esc($validation['nombre']) ?></div>
@@ -10,23 +15,23 @@
     </div>
     <div class="mb-3">
         <?= form_label('Apellido', 'apellido', ['class' => 'form-label']) ?>
-        <?= form_input(['type' => 'text', 'name' => 'apellido', 'class' => 'form-control', 'placeholder' => 'Ramirez']) ?>
+        <?= form_input(['type' => 'text', 'name' => 'apellido', 'class' => 'form-control', 'placeholder' => 'Ramirez', 'value' => set_value('apellido')]) ?>
         <!-- Mostrar mensaje de error -->
         <?php if (isset($validation['apellido'])) : ?>
             <div class="alert alert-danger mt-1" role="alert"><?= esc($validation['apellido']) ?></div>
         <?php endif; ?>
     </div>
     <div class="mb-3">
-        <?= form_label('Direccion de domicilio', 'address', ['class' => 'form-label']) ?>
-        <?= form_input(['type' => 'text', 'name' => 'address', 'class' => 'form-control', 'placeholder' => 'Calle siempre viva 123']) ?>
+        <?= form_label('Direccion de domicilio', 'direccion', ['class' => 'form-label']) ?>
+        <?= form_input(['type' => 'text', 'name' => 'direccion', 'class' => 'form-control', 'placeholder' => 'Calle siempre viva 123', 'value' => set_value('direccion')]) ?>
         <!-- Mostrar mensaje de error -->
-        <?php if (isset($validation['address'])) : ?>
-            <div class="alert alert-danger mt-1" role="alert"><?= esc($validation['address']) ?></div>
+        <?php if (isset($validation['direccion'])) : ?>
+            <div class="alert alert-danger mt-1" role="alert"><?= esc($validation['direccion']) ?></div>
         <?php endif; ?>
     </div>
     <div class="mb-3">
         <?= form_label('Correo Electronico', 'email', ['class' => 'form-label']) ?>
-        <?= form_input(['type' => 'email', 'name' => 'email', 'class' => 'form-control', 'placeholder' => 'Juanp@gmail.com']) ?>
+        <?= form_input(['type' => 'email', 'name' => 'email', 'class' => 'form-control', 'placeholder' => 'Juanp@gmail.com', 'value' => set_value('email')]) ?>
         <!-- Mostrar mensaje de error -->
         <?php if (isset($validation['email'])) : ?>
             <div class="alert alert-danger mt-1" role="alert"><?= esc($validation['email']) ?></div>

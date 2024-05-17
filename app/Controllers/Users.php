@@ -2,81 +2,91 @@
 
 namespace App\Controllers;
 
-class Users extends BaseController{
+use App\Models\Users_model;
 
-    public function login(){
+class Users extends BaseController {
+
+    public function login() {
         $data['titulo'] = 'Login';
-        return view('templates/header',$data).view('login').view('templates/footer');
+        return view('templates/header', $data)
+            . view('login')
+            . view('templates/footer');
     }
-    
 
-    public function register()
-    {
+    public function register() {
         $data['titulo'] = 'Registro';
-        return view('templates/header',$data).view('register').view('templates/footer');
+        return view('templates/header', $data)
+            . view('register')
+            . view('templates/footer');
     }
 
-    public function register_user(){
+    public function register_user() {
         $validation = \Config\Services::validation();
         $request = \Config\Services::request();
-
+        $userModel = new Users_model();
 
         $validation->setRules(
             [
                 'nombre' => 'required|max_length[150]',
                 'apellido' => 'required|max_length[100]',
-                'address' => 'required|min_length[10]|max_length[100]',
-                'email' => 'required|valid_email',
+                'direccion' => 'required|min_length[10]|max_length[100]',
+                'email' => 'required|valid_email|is_unique[usuarios.usuario_email]',
                 'password' => 'required|max_length[50]|min_length[8]',
-                're-password' => 'required|max_length[50]|min_length[8]',
+                're-password' => 'required|matches[password]|max_length[50]|min_length[8]',
             ],
             [
                 'nombre' => [
                     'required' => 'El nombre es requerido',
-                    'max_length' => 'Has superado el maximo de caracteres (150)'    
+                    'max_length' => 'Has superado el maximo de caracteres (150)',
                 ],
                 'apellido' => [
                     'required' => 'El apellido es requerido',
-                    'max_length' => 'Has superado el maximo de caracteres (100)'  
+                    'max_length' => 'Has superado el maximo de caracteres (100)',
                 ],
-                'adress' => [
+                'direccion' => [
                     'required' => 'La direccion de domicilio es requerida',
                     'min_length' => 'La direccion debe tener minimo (10) caracteres',
-                    'max_length' => 'La consulta tiene un maximo de (100) caracteres'
+                    'max_length' => 'La direccion tiene un maximo de (100) caracteres',
                 ],
                 'email' => [
                     'required' => 'El email es requerido',
-                    'valid_email' => 'Tiene que ser un correo valido'
+                    'valid_email' => 'Tiene que ser un correo valido',
+                    'is_unique' => 'El correo electrónico ya está registrado',
                 ],
                 'password' => [
                     'required' => 'La contraseña es requerida',
                     'max_length' => 'Has superado el maximo de caracteres (50)',
-                    'min_length' => 'La contraseña debe tener minimo 8 caracteres'
+                    'min_length' => 'La contraseña debe tener minimo 8 caracteres',
                 ],
                 're-password' => [
                     'required' => 'La contraseña es requerida',
                     'max_length' => 'Has superado el maximo de caracteres (50)',
-                    'min_length' => 'La contraseña debe tener minimo 8 caracteres'
-                ]
+                    'min_length' => 'La contraseña debe tener minimo 8 caracteres',
+                    'matches' => 'Las contraseñas no coinciden',
+                ],
             ]
         );
 
-        if($validation->withRequest($request)->run()){
+        if ($validation->withRequest($request)->run()) {
+            $data = [
+                'rol_id' => 2,
+                'usuario_nombre' => $request->getPost('nombre'),
+                'usuario_apellido' => $request->getPost('apellido'),
+                'usuario_direccion' => $request->getPost('direccion'),
+                'usuario_email' => $request->getPost('email'),
+                'usuario_password' => password_hash($request->getPost('password'), PASSWORD_DEFAULT),
+            ];
 
+            $userModel->insert($data);
 
-
-
-
-
-
-            return redirect()->route('register')->with('message','Se ha registrado correctamente!');
+            return redirect()->route('register')->with('message', 'Se ha registrado correctamente!');
         }
 
         $data['titulo'] = 'Registro';
         $data['validation'] = $validation->getErrors();
 
-        return view('templates/header',$data).view('register').view('templates/footer');
-
+        return view('templates/header', $data)
+            . view('register', $data)
+            . view('templates/footer');
     }
-
 }
