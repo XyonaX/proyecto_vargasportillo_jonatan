@@ -121,7 +121,7 @@ class Users extends BaseController
             );
             return redirect()->to('/login')->with('message', 'Login exitoso!');
         }else{
-            return redirect()->to('/login')->with('message', 'Correo electrónico o contraseña incorrectos.');
+            return redirect()->to('/login')->with('err', 'Correo electrónico o contraseña incorrectos.');
         }
     }
 }

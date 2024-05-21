@@ -3,6 +3,11 @@
         <div class="alert alert-success mt-3" role="alert">
             <?= session()->getFlashdata('message') ?>
         </div>
+
+    <?php elseif (session()->getFlashdata('err')) : ?>
+        <div class="alert alert-danger mt-3" role="alert">
+            <?= session()->getFlashdata('err') ?>
+        </div>
     <?php endif; ?>
     <?= form_open('login', ['class' => 'form-login p-2 border rounded-2 mb-3']) ?>
     <div class="mb-3">
