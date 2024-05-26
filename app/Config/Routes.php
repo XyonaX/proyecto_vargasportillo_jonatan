@@ -33,12 +33,17 @@ $routes->get('/', 'Home::index');
 $routes->get('/commercialization', 'Commercialization::index');
 $routes->get('/about', 'About::index');
 $routes->get('/contact', 'Contact::index');
+$routes->get('/products', 'Products::index');
 $routes->get('/terms', 'Terms::index');
 $routes->get('/login', 'Users::login');
 $routes->get('/register', 'Users::register');
+$routes->get('/logout', 'Users::logout_user');
+$routes->get('/gestionProductos', 'GestionProductos::index');
+
 $routes->post('/contact', 'Contact::add_consulta');
 $routes->post('/register', 'Users::register_user');
 $routes->post('/login', 'Users::login_user');
+$routes->post('/gestionProductos', 'GestionProductos::add_producto');
 
 
 

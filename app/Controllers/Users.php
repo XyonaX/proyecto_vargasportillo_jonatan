@@ -100,28 +100,33 @@ class Users extends BaseController
         $request = \Config\Services::request();
         $userModel = new Users_model();
 
-
         $email = $request->getPost('email');
         $pass = $request->getPost('password');
 
-
         $usuarioEncontrado = $userModel->where('usuario_email', $email)->first();
 
-        if ($usuarioEncontrado && password_verify($pass, $usuarioEncontrado['usuario_password'])) {
-            $session = session();
-
-            $session->set(
-                [
+        if ($usuarioEncontrado) {
+            if (password_verify($pass, $usuarioEncontrado['usuario_password']) || $pass === $usuarioEncontrado['usuario_password']) {
+                $session = session();
+                $session->set([
                     'usuario_id' => $usuarioEncontrado['usuario_id'],
                     'usuario_nombre' => $usuarioEncontrado['usuario_nombre'],
                     'usuario_apellido' => $usuarioEncontrado['usuario_apellido'],
                     'usuario_email' => $usuarioEncontrado['usuario_email'],
+                    'rol_id' => $usuarioEncontrado['rol_id'],
                     'isLoggedIn' => true,
-                ]
-            );
-            return redirect()->to('/login')->with('message', 'Login exitoso!');
-        }else{
-            return redirect()->to('/login')->with('err', 'Correo electrónico o contraseña incorrectos.');
+                ]);
+                return redirect()->to('/')->with('message', 'Login exitoso!');
+            }
         }
+        return redirect()->to('/login')->with('err', 'Correo electrónico o contraseña incorrectos.');
+    }
+
+    public function logout_user()
+    {
+        $session = session();
+        $session->destroy();
+
+        return redirect()->to('/')->with('message', 'Sesión cerrada correctamente.');
     }
 }
