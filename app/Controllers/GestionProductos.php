@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\Category_model;
 use App\Models\Products_model;
 
+
 class GestionProductos extends BaseController
 {
     public function index()
@@ -16,6 +17,15 @@ class GestionProductos extends BaseController
 
         $categoriaModel = new Category_model();
         $data['categorias'] = $categoriaModel->findAll();
+        $data['validation'] = session()->getFlashdata('validation');
+        $data['form_open'] = session()->getFlashdata('form_open');
+
+        $productos_paginados = $this->show_products();
+
+        $data['productos'] = $productos_paginados['productos'];
+        $data['pager'] = $productos_paginados['pager'];
+
+        
 
         $data['titulo'] = 'Gestion Productos';
         return view('templates/header', $data)
@@ -28,7 +38,7 @@ class GestionProductos extends BaseController
         $categoriaModel = new Category_model();
         $data['categorias'] = $categoriaModel->findAll();
         $data['titulo'] = 'Agregar Producto';
-        
+
         $validation = \Config\Services::validation();
         $request = \Config\Services::request();
         $productsModel = new Products_model();
@@ -60,7 +70,7 @@ class GestionProductos extends BaseController
             $img = $request->getFile('imagen');
             $nombre_aleatorio = $img->getRandomName();
             if ($img->isValid() && !$img->hasMoved()) {
-                $img->move(ROOTPATH.'assets/uploads', $nombre_aleatorio);
+                $img->move(ROOTPATH . 'assets/uploads', $nombre_aleatorio);
 
                 $data = [
                     'id_categoria' => $request->getPost('categoria'),
@@ -84,7 +94,31 @@ class GestionProductos extends BaseController
             . view('templates/footer');
     }
 
-    public function show_products (){
-        
+
+    public function show_products()
+    {
+        $productsModel = new \App\Models\Products_model();
+        $categoryModel = new \App\Models\Category_model();
+        $pager = \Config\Services::pager();
+        $request = \Config\Services::request();
+
+        $perPage = 5; // numero de productos por pagina
+
+        $currentPage = $request->getVar('page') ?: 1;
+        // Obtén todos los productos paginados
+        $productos = $productsModel->paginate($perPage, 'default', $currentPage);
+
+        $pager = $productsModel->pager;
+        $pager->setPath('proyecto_vargasportillo_jonatan/gestionProductos');
+
+        // Añade el nombre de la categoría a cada producto
+        foreach ($productos as &$producto) {
+            $categoria = $categoryModel->find($producto['id_categoria']);
+            $producto['nombre_categoria'] = $categoria['nombre'];
+        }
+        return [
+            'productos' => $productos,
+            'pager' => $pager
+        ];
     }
 }

@@ -38,12 +38,13 @@ $routes->get('/terms', 'Terms::index');
 $routes->get('/login', 'Users::login');
 $routes->get('/register', 'Users::register');
 $routes->get('/logout', 'Users::logout_user');
-$routes->get('/gestionProductos', 'GestionProductos::index');
+$routes->get('gestionProductos', 'GestionProductos::index', ['filter' => 'admin']);
 
 $routes->post('/contact', 'Contact::add_consulta');
 $routes->post('/register', 'Users::register_user');
 $routes->post('/login', 'Users::login_user');
-$routes->post('/gestionProductos', 'GestionProductos::add_producto');
+$routes->post('gestionProductos', 'GestionProductos::add_producto', ['filter' => 'admin']);
+
 
 
 

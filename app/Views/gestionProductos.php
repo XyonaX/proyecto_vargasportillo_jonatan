@@ -6,48 +6,71 @@
                     <div class="col-sm-6">
                         <h2>Manage <b>Products</b></h2>
                     </div>
-                    <div class="col-sm-6  d-flex justify-content-center align-align-items-center">
+                    <div class="col-sm-6 d-flex justify-content-center align-items-center">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newProduct">
-                            <span class="d-flex justify-content-center align-items-center"><i class="bi bi-plus-circle-fill"></i>Agregar Producto</span>
+                            <span class="d-flex justify-content-center align-items-center"><i class="bi bi-plus-circle-fill text-success"></i> Agregar Producto</span>
                         </button>
-                        <a href="#deleteProductModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                        <button class="btn btn-danger d-flex justify-content-center align-items-center" data-bs-toggle="modal">
+                            <span class="d-flex justify-content-center align-items-center"><i class="bi bi-trash-fill  text-danger"></i>Eliminar</span>
+                        </button>
                     </div>
                 </div>
             </div>
-            <table class="table table-striped table-hover">
-                <thead>
-                    <tr>
-                        <th>
-                            <span class="custom-checkbox">
-                                <input type="checkbox" id="selectAll">
-                                <label for="selectAll"></label>
-                            </span>
-                        </th>
-                        <th>Categoría</th>
-                        <th>Nombre del producto</th>
-                        <th>Descripción</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Imagen</th>
-                        <th>Activo</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Aquí debes poner el loop para mostrar los productos -->
-                </tbody>
-            </table>
-            <div class="clearfix">
-                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-                <ul class="pagination">
-                    <li class="page-item disabled"><a href="#">Previous</a></li>
-                    <li class="page-item"><a href="#" class="page-link">1</a></li>
-                    <li class="page-item"><a href="#" class="page-link">2</a></li>
-                    <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                    <li class="page-item"><a href="#" class="page-link">4</a></li>
-                    <li class="page-item"><a href="#" class="page-link">5</a></li>
-                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                </ul>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Categoría</th>
+                            <th class="text-center">Nombre del producto</th>
+                            <th class="text-center">Descripción</th>
+                            <th class="text-center">Precio</th>
+                            <th class="text-center">Cantidad</th>
+                            <th class="text-center">Imagen</th>
+                            <th class="text-center">Activo</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if (!empty($productos)) : ?>
+                            <?php foreach ($productos as $producto) : ?>
+                                <tr>
+                                    <td class="text-center"><?= isset($producto['nombre_categoria']) ? esc($producto['nombre_categoria']) : '' ?></td>
+                                    <td class="text-center"><?= isset($producto['nombre_producto']) ? esc($producto['nombre_producto']) : '' ?></td>
+                                    <td class="text-center"><?= isset($producto['desc_producto']) ? esc($producto['desc_producto']) : '' ?></td>
+                                    <td class="text-center"><?= isset($producto['precio_producto']) ? esc($producto['precio_producto']) : '' ?></td>
+                                    <td class="text-center"><?= isset($producto['cantidad_producto']) ? esc($producto['cantidad_producto']) : '' ?></td>
+                                    <td class="text-center">
+                                        <?php if (isset($producto['nombre_imagen'])) : ?>
+                                            <img src="<?= base_url('assets/uploads/' . esc($producto['nombre_imagen'])) ?>" alt="<?= esc($producto['nombre_producto']) ?>" width="50">
+                                        <?php endif; ?>
+                                    </td>
+                                    <td class="text-center"><?= isset($producto['activo']) ? ($producto['activo'] ? 'Sí' : 'No') : '' ?></td>
+                                    <td class="">
+                                        <div class="d-flex gap-1">
+                                            <button class="btn btn-warning edit text-warning bg-black" data-bs-toggle="modal"><i class="bi bi-pencil-square" data-bs-toggle="tooltip" title="Edit"></i></button>
+                                            <button class="btn btn-danger delete text-danger bg-black" data-bs-toggle="modal"><i class="bi bi-trash3-fill" data-bs-toggle="tooltip" title="Delete"></i></button>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else : ?>
+                            <tr>
+                                <td colspan="9" class="text-center">No hay productos disponibles</td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+                <div class="clearfix">
+
+                    <div class="hint-text">Showing <b><?= count($productos) ?></b> out of <b><?= $pager->getTotal() ?></b> entries</div>
+                    <?= $pager->links('default', 'custom_pagination') ?>
+                    <!-- <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-end align-content-center">
+                            <?= $pager->links() ?>
+                        </ul>
+                    </nav> -->
+                </div>
             </div>
         </div>
     </div>
@@ -64,14 +87,14 @@
                 <?= form_open_multipart('gestionProductos', ['class' => 'p-2 border rounded-2 mb-3']) ?>
                 <div class="mb-3 form-group">
                     <?= form_label('Nombre del Producto', 'nombre', ['class' => 'form-label']) ?>
-                    <?= form_input(['name' => 'nombre', 'id' => 'nombre', 'class' => 'form-control rounded-2', 'value' => set_value('nombre'),'required' => 'required']) ?>
+                    <?= form_input(['name' => 'nombre', 'id' => 'nombre', 'class' => 'form-control rounded-2', 'value' => set_value('nombre'), 'required' => 'required']) ?>
                     <?php if (isset($validation['nombre'])) : ?>
                         <div class="alert alert-danger mt-1" role="alert"><?= $validation['nombre'] ?></div>
                     <?php endif; ?>
                 </div>
                 <div class="mb-3 form-group">
                     <?= form_label('Descripción', 'descripcion', ['class' => 'form-label']) ?>
-                    <?= form_textarea(['name' => 'descripcion', 'id' => 'descripcion', 'class' => 'form-control rounded-2', 'rows' => '3', 'value' => set_value('descripcion'),'required' => 'required']) ?>
+                    <?= form_textarea(['name' => 'descripcion', 'id' => 'descripcion', 'class' => 'form-control rounded-2', 'rows' => '3', 'value' => set_value('descripcion'), 'required' => 'required']) ?>
                     <?php if (isset($validation['descripcion'])) : ?>
                         <div class="alert alert-danger mt-1" role="alert"><?= $validation['descripcion'] ?></div>
                     <?php endif; ?>
@@ -85,14 +108,14 @@
                 </div>
                 <div class="mb-3 form-group">
                     <?= form_label('Cantidad', 'cantidad', ['class' => 'form-label']) ?>
-                    <?= form_input(['type' => 'number', 'name' => 'cantidad', 'id' => 'cantidad', 'class' => 'form-control rounded-2', 'value' => set_value('cantidad'),'required' => 'required']) ?>
+                    <?= form_input(['type' => 'number', 'name' => 'cantidad', 'id' => 'cantidad', 'class' => 'form-control rounded-2', 'value' => set_value('cantidad'), 'required' => 'required']) ?>
                     <?php if (isset($validation['cantidad'])) : ?>
                         <div class="alert alert-danger mt-1" role="alert"><?= $validation['cantidad'] ?></div>
                     <?php endif; ?>
                 </div>
                 <div class="mb-3 form-group">
                     <?= form_label('Seleccione una Imagen', 'imagen', ['class' => 'form-label']) ?>
-                    <?= form_input(['type' => 'file','name' => 'imagen', 'id' => 'imagen', 'class' => 'form-control rounded-2','value' => set_value('imagen')]) ?>
+                    <?= form_input(['type' => 'file', 'name' => 'imagen', 'id' => 'imagen', 'class' => 'form-control rounded-2', 'value' => set_value('imagen')]) ?>
                     <?php if (isset($validation['imagen'])) : ?>
                         <div class="alert alert-danger mt-1" role="alert"><?= $validation['imagen'] ?></div>
                     <?php endif; ?>
@@ -114,7 +137,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <?= form_submit('submit', 'Guardar cambios', ['class' => 'btn btn-primary']) ?>
+                    <?= form_submit('submit', 'Agregar Producto', ['class' => 'btn btn-primary']) ?>
                 </div>
                 <?= form_close() ?>
             </div>
