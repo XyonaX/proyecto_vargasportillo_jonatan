@@ -25,7 +25,7 @@ class GestionProductos extends BaseController
         $data['productos'] = $productos_paginados['productos'];
         $data['pager'] = $productos_paginados['pager'];
 
-        
+
 
         $data['titulo'] = 'Gestion Productos';
         return view('templates/header', $data)
@@ -121,4 +121,32 @@ class GestionProductos extends BaseController
             'pager' => $pager
         ];
     }
+
+    public function edit_product()
+    {
+        $request = \Config\Services::request();
+        $productsModel = new \App\Models\Products_model();
+
+        $productId = $request->getPost('product_id');
+        $data = [
+            'id_categoria' => $request->getPost('categoria'),
+            'nombre_producto' => $request->getPost('nombre'),
+            'desc_producto' => $request->getPost('descripcion'),
+            'precio_producto' => $request->getPost('precio'),
+            'cantidad_producto' => $request->getPost('cantidad'),
+            'activo' => $request->getPost('activo')
+        ];
+
+        if ($request->getFile('imagen')->isValid()) {
+            $img = $request->getFile('imagen');
+            $nombreAleatorio = $img->getRandomName();
+            $img->move(ROOTPATH . 'assets/uploads', $nombreAleatorio);
+            $data['nombre_imagen'] = $nombreAleatorio;
+        }
+        $productsModel->update($productId, $data);
+
+        return redirect()->to('/gestionProductos')->with('success', 'Producto actualizado correctamente');
+    }
+
+    
 }
