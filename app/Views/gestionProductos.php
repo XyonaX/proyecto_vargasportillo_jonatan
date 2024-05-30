@@ -54,7 +54,9 @@
                                         </div>
                                     </td>
                                     <td class="text-center">
-                                    <button class="btn btn-danger delete text-danger bg-black" data-bs-toggle="modal"><i class="bi bi-trash3-fill" data-bs-toggle="tooltip" title="Delete"></i></button>
+                                        <a class="btn btn-<?= $producto['activo'] ? 'danger' : 'success' ?>" href="<?= base_url('gestionProductos/activar_desactivar/' . $producto['id_producto']) ?>">
+                                            <?= $producto['activo'] ? 'Desactivar' : 'Activar' ?>
+                                        </a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

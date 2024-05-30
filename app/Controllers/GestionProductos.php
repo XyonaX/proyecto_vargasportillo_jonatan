@@ -148,5 +148,19 @@ class GestionProductos extends BaseController
         return redirect()->to('/gestionProductos')->with('success', 'Producto actualizado correctamente');
     }
 
+    public function activar_desactivar($productId)
+{
+    $productsModel = new \App\Models\Products_model();
+    $product = $productsModel->find($productId);
+
+    if ($product) {
+        $newStatus = $product['activo'] ? 0 : 1;
+        $productsModel->update($productId, ['activo' => $newStatus]);
+        return redirect()->to('/gestionProductos')->with('success', 'Producto actualizado correctamente');
+    } else {
+        return redirect()->to('/gestionProductos')->with('error', 'Producto no encontrado');
+    }
+}
+
     
 }
