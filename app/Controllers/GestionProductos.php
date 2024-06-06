@@ -102,7 +102,7 @@ class GestionProductos extends BaseController
         $pager = \Config\Services::pager();
         $request = \Config\Services::request();
 
-        $perPage = 5; // numero de productos por pagina
+        $perPage = 10; // numero de productos por pagina
 
         $currentPage = $request->getVar('page') ?: 1;
         // Obtén todos los productos paginados
