@@ -10,9 +10,6 @@
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newProduct">
                             <span class="d-flex justify-content-center align-items-center"><i class="bi bi-plus-circle-fill text-success"></i> Agregar Producto</span>
                         </button>
-                        <button class="btn btn-danger d-flex justify-content-center align-items-center" data-bs-toggle="modal">
-                            <span class="d-flex justify-content-center align-items-center"><i class="bi bi-trash-fill  text-danger"></i>Eliminar</span>
-                        </button>
                     </div>
                 </div>
             </div>
