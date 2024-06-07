@@ -1,5 +1,5 @@
 <main class="min-vh-100">
-    <div class="text-center container py-5"> 
+    <div class="text-center container py-5">
         <h4 class="mt-4 mb-5"><strong>Productos</strong></h4>
 
         <div class="row">
@@ -23,10 +23,16 @@
                             <div class="card-product-body d-flex flex-column justify-content-center align-items-center">
                                 <h5 class="card-title mb-3 text-white"><?= esc($producto['nombre_producto']) ?></h5>
                                 <p class="text-white"><?= esc($producto['desc_producto']) ?></p>
-                                <h6 class="mb-3 text-success">$<?= esc($producto['precio_producto']) ?></h6>
-                                <div class="d-flex justify-content-between">
-
-                                </div>
+                                <h6 class="mb-3">$<?= esc($producto['precio_producto']) ?></h6>
+                                <?php if (isset($isLoggedIn) && $isLoggedIn) : ?>
+                                    <div class="d-flex justify-content-between my-2">
+                                        <a href="" class="btn btn-success">Comprar</a>
+                                    </div>
+                                <?php else : ?>
+                                    <div class="d-flex justify-content-between my-2">
+                                        <a href="" class="btn btn-success d-none">Comprar</a>
+                                    </div>
+                                <?php endif ?>
                             </div>
                         </div>
                     </div>
