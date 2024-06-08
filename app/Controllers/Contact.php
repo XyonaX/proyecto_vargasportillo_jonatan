@@ -50,6 +50,7 @@ class Contact extends BaseController{
                 'consultas_name' => $request->getPost('nombre'),
                 'consultas_email' => $request->getPost('email'),
                 'consultas_question' => $request->getPost('consulta'),
+                'consultas_visto' => 0,
             ];
             //insertar en la tabla mensajes
             $consultaModel->insert($data);
