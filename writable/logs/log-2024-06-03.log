@@ -1,6 +1,0 @@
-CRITICAL - 2024-06-03 14:18:28 --> Cannot use object of type App\Controllers\GestionProductos as array
-in APPPATH/Controllers/Products.php on line 20.
- 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Products->index()
- 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
- 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

@@ -38,6 +38,7 @@ $routes->get('/terms', 'Terms::index');
 $routes->get('/login', 'Users::login');
 $routes->get('/register', 'Users::register');
 $routes->get('/logout', 'Users::logout_user');
+$routes->get('/consultas', 'Consultas::index');
 $routes->get('/gestionProductos', 'GestionProductos::index', ['filter' => 'admin']);
 $routes->get('/gestionProductos/activar_desactivar/(:num)', 'GestionProductos::activar_desactivar/$1', ['filter' => 'admin']);
 
