@@ -38,7 +38,7 @@ $routes->get('/terms', 'Terms::index');
 $routes->get('/login', 'Users::login');
 $routes->get('/register', 'Users::register');
 $routes->get('/logout', 'Users::logout_user');
-$routes->get('/consultas', 'Consultas::index');
+$routes->get('/consultas', 'Consultas::index',['filter' => 'admin']);
 $routes->get('/gestionProductos', 'GestionProductos::index', ['filter' => 'admin']);
 $routes->get('/gestionProductos/activar_desactivar/(:num)', 'GestionProductos::activar_desactivar/$1', ['filter' => 'admin']);
 
@@ -47,6 +47,8 @@ $routes->post('/register', 'Users::register_user');
 $routes->post('/login', 'Users::login_user');
 $routes->post('/gestionProductos', 'GestionProductos::add_producto', ['filter' => 'admin']);
 $routes->post('/gestionProductos/edit_product', 'GestionProductos::edit_product', ['filter' => 'admin']);
+$routes->post('/consultas/toggle_visto/(:num)', 'Consultas::toggle_visto/$1',['filter' => 'admin']);
+
 
 
 
