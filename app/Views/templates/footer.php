@@ -35,30 +35,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const editButtons = document.querySelectorAll('.edit');
-    editButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const productId = this.getAttribute('data-id');
-            const categoria = this.getAttribute('data-categoria');
-            const nombre = this.getAttribute('data-nombre');
-            const descripcion = this.getAttribute('data-descripcion');
-            const precio = this.getAttribute('data-precio');
-            const cantidad = this.getAttribute('data-cantidad');
-            const activo = this.getAttribute('data-activo');
-
-            document.getElementById('editProductId').value = productId;
-            document.getElementById('edit_categoria').value = categoria;
-            document.getElementById('edit_nombre').value = nombre;
-            document.getElementById('edit_descripcion').value = descripcion;
-            document.getElementById('edit_precio').value = precio;
-            document.getElementById('edit_cantidad').value = cantidad;
-            document.getElementById('edit_activo').value = activo;
-        });
-    });
-});
-</script>
 
     </body>
 
