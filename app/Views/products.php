@@ -9,16 +9,28 @@
                         <div class="card card-product">
                             <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
                                 <img src="<?= base_url('assets/uploads/' . esc($producto['nombre_imagen'])) ?>" class="w-100 img-fluid" alt="<?= esc($producto['nombre_producto']) ?>" />
-                                <a href="#!">
-                                    <div class="mask">
-                                        <div class="d-flex justify-content-start align-items-end h-100">
-                                            <h5><span class="badge bg-primary ms-2"><?= esc($producto['nombre_categoria']) ?></span></h5>
+                                <div class="d-flex">
+                                    <a href="#!">
+                                        <div class="mask">
+                                            <div class="d-flex justify-content-start align-items-end h-100">
+                                                <h5><span class="badge bg-primary ms-2"><?= esc($producto['nombre_categoria']) ?></span></h5>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="hover-overlay">
-                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                                    </div>
-                                </a>
+                                        <div class="hover-overlay">
+                                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                        </div>
+                                    </a>
+                                    <a href="#!">
+                                        <div class="mask">
+                                            <div class="d-flex justify-content-start align-items-end h-100">
+                                                <h5><span class="badge bg-success ms-2">Stock: <?= esc($producto['cantidad_producto']) ?></span></h5>
+                                            </div>
+                                        </div>
+                                        <div class="hover-overlay">
+                                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                             <div class="card-product-body d-flex flex-column justify-content-center align-items-center">
                                 <h5 class="card-title mb-3 text-white"><?= esc($producto['nombre_producto']) ?></h5>
