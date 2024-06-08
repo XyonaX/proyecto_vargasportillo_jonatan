@@ -68,7 +68,7 @@
                                                 <a class="nav-link <?php echo (current_url() == base_url('/contact')) ? 'active' : ''; ?>" href="<?php echo base_url('/contact'); ?>">Contacto</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link <?php echo (current_url() == base_url('/products')) ? 'active' : ''; ?>" href="<?php echo base_url('/products'); ?>">Productos</a>
+                                                <a class="nav-link me-2 <?php echo (current_url() == base_url('/products')) ? 'active' : ''; ?>" href="<?php echo base_url('/products'); ?>">Productos</a>
                                             </li>
                                             <li class="nav-item">
                                                 <ul class="navbar-nav">
