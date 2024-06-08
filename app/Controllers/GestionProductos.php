@@ -5,7 +5,6 @@ namespace App\Controllers;
 use App\Models\Category_model;
 use App\Models\Products_model;
 
-
 class GestionProductos extends BaseController
 {
     public function index()
@@ -24,8 +23,6 @@ class GestionProductos extends BaseController
 
         $data['productos'] = $productos_paginados['productos'];
         $data['pager'] = $productos_paginados['pager'];
-
-
 
         $data['titulo'] = 'Gestion Productos';
         return view('templates/header', $data)
@@ -89,11 +86,15 @@ class GestionProductos extends BaseController
 
         $data['validation'] = $validation->getErrors();
 
+        // Inicializa $data['productos'] como un array vacío
+        $productos_paginados = $this->show_products();
+        $data['productos'] = $productos_paginados['productos'];
+        $data['pager'] = $productos_paginados['pager'];
+
         return view('templates/header', $data)
             . view('gestionProductos', $data)
             . view('templates/footer');
     }
-
 
     public function show_products()
     {
@@ -102,11 +103,16 @@ class GestionProductos extends BaseController
         $pager = \Config\Services::pager();
         $request = \Config\Services::request();
 
-        $perPage = 10; // numero de productos por pagina
+        $perPage = 10; // número de productos por página
 
         $currentPage = $request->getVar('page') ?: 1;
         // Obtén todos los productos paginados
         $productos = $productsModel->paginate($perPage, 'default', $currentPage);
+
+        // Inicializar $productos como un array vacío si está vacío
+        if (!$productos) {
+            $productos = [];
+        }
 
         $pager = $productsModel->pager;
         $pager->setPath('proyecto_vargasportillo_jonatan/gestionProductos');
@@ -116,6 +122,7 @@ class GestionProductos extends BaseController
             $categoria = $categoryModel->find($producto['id_categoria']);
             $producto['nombre_categoria'] = $categoria['nombre'];
         }
+
         return [
             'productos' => $productos,
             'pager' => $pager
@@ -149,18 +156,16 @@ class GestionProductos extends BaseController
     }
 
     public function activar_desactivar($productId)
-{
-    $productsModel = new \App\Models\Products_model();
-    $product = $productsModel->find($productId);
+    {
+        $productsModel = new \App\Models\Products_model();
+        $product = $productsModel->find($productId);
 
-    if ($product) {
-        $newStatus = $product['activo'] ? 0 : 1;
-        $productsModel->update($productId, ['activo' => $newStatus]);
-        return redirect()->to('/gestionProductos')->with('success', 'Producto actualizado correctamente');
-    } else {
-        return redirect()->to('/gestionProductos')->with('error', 'Producto no encontrado');
+        if ($product) {
+            $newStatus = $product['activo'] ? 0 : 1;
+            $productsModel->update($productId, ['activo' => $newStatus]);
+            return redirect()->to('/gestionProductos')->with('success', 'Producto actualizado correctamente');
+        } else {
+            return redirect()->to('/gestionProductos')->with('error', 'Producto no encontrado');
+        }
     }
-}
-
-    
 }
