@@ -10,7 +10,7 @@ class Consulta_model extends Model
     protected $primaryKey = 'consultas_id'; 
     protected $useAutoIncrement = true;
     protected $allowedFields = [
-        'consultas_name', 'consultas_email', 'consultas_question'
+        'consultas_name', 'consultas_email', 'consultas_question','consultas_visto'
     ];
     protected $returnType = 'array';
     
