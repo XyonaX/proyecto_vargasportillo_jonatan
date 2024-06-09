@@ -1,4 +1,4 @@
-<main>
+<main class="min-vh-100">
 <div class="container mt-5">
     <h1 class="text-center"><?= $titulo ?></h1>
 
