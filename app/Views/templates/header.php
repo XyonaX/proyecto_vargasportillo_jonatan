@@ -71,6 +71,9 @@
                                                 <a class="nav-link me-2 <?php echo (current_url() == base_url('/products')) ? 'active' : ''; ?>" href="<?php echo base_url('/products'); ?>">Productos</a>
                                             </li>
                                             <li class="nav-item">
+                                                <a class="nav-link me-2 <?php echo (current_url() == base_url('/carrito')) ? 'active' : ''; ?>" href="<?php echo base_url('/carrito'); ?>">Ver Carrito</a>
+                                            </li>
+                                            <li class="nav-item">
                                                 <ul class="navbar-nav">
                                                     <div class="collapse-user">
                                                         <li class="nav-item dropdown">

@@ -37,9 +37,12 @@
                                 <p class="text-white"><?= esc($producto['desc_producto']) ?></p>
                                 <h6 class="mb-3">$<?= esc($producto['precio_producto']) ?></h6>
                                 <?php if (isset($isLoggedIn) && $isLoggedIn) : ?>
-                                    <div class="d-flex justify-content-between my-2">
-                                        <a href="" class="btn btn-success">Comprar</a>
-                                    </div>
+                                    <?= form_open('add_carrito') ?>
+                                        <?= form_hidden('id', $producto['id_producto']) ?>
+                                        <?= form_hidden('name', $producto['nombre_producto']) ?>
+                                        <?= form_hidden('precio', $producto['precio_producto']) ?>
+                                        <?= form_submit('comprar', 'Comprar', "class='btn btn-success'") ?>
+                                    <?= form_close() ?>
                                 <?php else : ?>
                                     <div class="d-flex justify-content-between my-2">
                                         <a href="" class="btn btn-success d-none">Comprar</a>
