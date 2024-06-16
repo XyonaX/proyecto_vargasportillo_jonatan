@@ -2,6 +2,10 @@
 
 namespace App\Controllers;
 
+use App\Models\DetalleVenta_model;
+use App\Models\Products_model;
+use App\Models\Ventas_model;
+
 class Carrito extends BaseController {
 
     public function index() {
@@ -58,5 +62,50 @@ class Carrito extends BaseController {
         $cart->destroy();
 
         return redirect()->route('carrito');
+    }
+
+    public function guardar_venta(){
+        $cart = \Config\Services::cart();
+        $ventas = new Ventas_model();
+        $detalle = new DetalleVenta_model();
+        $productos = new Products_model();
+
+        $cart1 = $cart->contents();
+
+        foreach($cart1 as $item){
+            $producto = $productos->where('id_producto',$item['id'])->first();
+            if($producto['cantidad_producto'] < $item['qty']){
+                return redirect()->route('carrito');
+            }
+        }
+
+        $data = array(
+            'id_cliente' => session('usuario_id'),
+            'venta_fecha' => date('Y-m-d'),
+        );
+
+        $venta_id = $ventas->insert($data);
+        $cart1 = $cart->contents();
+        foreach($cart1 as $item){
+            $detalle_venta = array(
+                'id_venta' => $venta_id,
+                'id_producto' => $item['id'],
+                'detalle_cantidad' => $item['qty'],
+                'detalle_precio' => $item['price']
+
+            );
+
+            $producto = $productos->where('id_producto',$item['id'])->first();
+            $data = [
+                'cantidad_producto' => $producto['cantidad_producto'] - $item['qty'],
+            ];
+
+            //Actualiza el stock del producto
+            $productos->update($item['id'],$data);
+            //Insertar el detalle de Venta
+            $detalle->insert($detalle_venta);
+        }
+        $cart->destroy();
+        return redirect()->route('products');
     }
 }

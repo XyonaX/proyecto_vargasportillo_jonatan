@@ -42,8 +42,9 @@ $routes->get('/carrito', 'Carrito::index');
 $routes->get('/consultas', 'Consultas::index',['filter' => 'admin']);
 $routes->get('/gestionProductos', 'GestionProductos::index', ['filter' => 'admin']);
 $routes->get('/gestionProductos/activar_desactivar/(:num)', 'GestionProductos::activar_desactivar/$1', ['filter' => 'admin']);
-$routes->get('/remove_item/(:segment)', 'Carrito::eliminar_item/$1');
+$routes->get('/remove_item/(:any)', 'Carrito::eliminar_item/$1');
 $routes->get('/delete_cart', 'Carrito::eliminar_carrito');
+$routes->get('/ventas', 'Carrito::guardar_venta');
 
 $routes->post('/contact', 'Contact::add_consulta');
 $routes->post('/register', 'Users::register_user');
