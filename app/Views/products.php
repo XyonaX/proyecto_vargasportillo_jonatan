@@ -1,4 +1,4 @@
-<main class="min-vh-100">
+<main class="min-vh-100 animate__animated animate__fadeIn">
     <div class="text-center container py-5">
         <h4 class="mt-4 mb-5"><strong>Productos</strong></h4>
 
