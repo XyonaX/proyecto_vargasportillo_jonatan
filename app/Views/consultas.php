@@ -49,17 +49,22 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        document.querySelector('.marcar-vista').addEventListener('click', function(event) {
-            event.preventDefault();
-            var form = this.closest('form');
-            Swal.fire({
-                position: "top-center",
-                icon: "success",
-                title: "Cambiando valores...",
-                showConfirmButton: false,
-                timer: 1500
-            }).then(() => {
-                form.submit();
+        // Seleccionar todos los botones con clase .marcar-vista
+        var botonesMarcarVista = document.querySelectorAll('.marcar-vista');
+
+        // Iterar sobre cada botón y agregar el evento de click
+        botonesMarcarVista.forEach(function(boton) {
+            boton.addEventListener('click', function(event) {
+                event.preventDefault();
+                var form = this.closest('form');
+                Swal.fire({
+                    icon: "success",
+                    title: "Cambiando Estado...",
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then(() => {
+                    form.submit();
+                });
             });
         });
     });
