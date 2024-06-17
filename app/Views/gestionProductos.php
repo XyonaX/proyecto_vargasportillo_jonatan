@@ -51,7 +51,7 @@
                                         </div>
                                     </td>
                                     <td class="text-center">
-                                        <a class="btn btn-<?= $producto['activo'] ? 'danger' : 'success' ?>" href="<?= base_url('gestionProductos/activar_desactivar/' . $producto['id_producto']) ?>">
+                                        <a class="btn btn-<?= $producto['activo'] ? 'danger' : 'success' ?> cambiar-estado text-white" href="<?= base_url('gestionProductos/activar_desactivar/' . $producto['id_producto']) ?>">
                                             <?= $producto['activo'] ? 'Desactivar' : 'Activar' ?>
                                         </a>
                                     </td>
@@ -242,6 +242,21 @@
                 timer: 1500
             }).then(() => {
                 form.submit();
+            });
+        });
+    });
+
+    document.querySelectorAll('.cambiar-estado').forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            var href = this.getAttribute('href');
+            Swal.fire({
+                icon: "success",
+                text: "Cambiando estado...",
+                showConfirmButton: false,
+                timer: 1500,
+            }).then(() => {
+                window.location.href = href;
             });
         });
     });
