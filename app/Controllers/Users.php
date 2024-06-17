@@ -173,7 +173,6 @@ class Users extends BaseController
 
     public function forgot_password()
     {
-        // Validar el email ingresado
         $validation = \Config\Services::validation();
         $request = \Config\Services::request();
 
@@ -187,7 +186,6 @@ class Users extends BaseController
         ]);
 
         if ($validation->withRequest($request)->run()) {
-            // Obtener el usuario por su correo electrónico
             $userModel = new Users_model();
             $email = $request->getPost('email');
             $usuarioEncontrado = $userModel->where('usuario_email', $email)->first();
@@ -195,14 +193,10 @@ class Users extends BaseController
             if ($usuarioEncontrado) {
                 $session = session();
                 $token = bin2hex(random_bytes(32));
-                $session->setTempdata('reset_token', $token, 600); // Almacenar el token en sesión por 10 minutos
+                $session->setTempdata('reset_token', $token, 600); // Guardar el token en sesión por 10 minutos
+                $session->setTempdata('reset_email', $email, 600); // Guardar el email en sesión por 10 minutos
 
-                $email = \Config\Services::email();
-                $email->setTo($usuarioEncontrado['usuario_email']);
-                $email->setSubject('Recuperación de Contraseña');
-                $email->setMessage("Para restablecer tu contraseña, haz clic en este enlace: <a href='" . base_url() . "/reset_password/$token'>Recuperar Contraseña</a>");
-
-                if ($email->send()) {
+                if ($this->enviarCorreoRecuperacion($usuarioEncontrado['usuario_email'], $token)) {
                     return redirect()->to('/login')->with('message', 'Se ha enviado un correo electrónico con instrucciones para recuperar tu contraseña.');
                 } else {
                     return redirect()->to('/login')->with('err', 'No se pudo enviar el correo electrónico. Por favor, intenta nuevamente más tarde.');
@@ -212,13 +206,45 @@ class Users extends BaseController
             }
         }
 
-        // Si no se pasan las validaciones, mostrar errores en la vista de login
         $data['titulo'] = 'Recuperar Contraseña';
         $data['validation'] = $validation;
 
         return view('templates/header', $data)
             . view('forgot_password', $data)
             . view('templates/footer');
+    }
+
+
+    private function enviarCorreoRecuperacion($email, $token)
+    {
+        $mail = new PHPMailer(true);
+
+        try {
+            // Configuración del servidor SMTP
+            $mail->isSMTP();
+            $mail->Host = 'live.smtp.mailtrap.io';  // Cambiar al host de tu servidor SMTP
+            $mail->SMTPAuth = true;
+            $mail->Username = 'api';  // Cambiar al correo desde el cual enviarás el correo
+            $mail->Password = '7b51bb608c7aa32ebeeecb762a17445d';  // Cambiar a la contraseña de tu correo
+            $mail->SMTPSecure = 'tls';
+            $mail->Port = 587;
+
+            // Configuración del correo
+            $mail->setFrom('mailtrap@demomailtrap.com', 'UNNEPHONES');  // Cambiar al correo y nombre del remitente
+            $mail->addAddress('zaxttpro@gmail.com');  // Agregar el destinatario
+
+            // Contenido del correo
+            $mail->isHTML(true);
+            $mail->Subject = 'Recuperacion de Contrasena';
+            $mail->Body    = 'Para restablecer tu contrasena, haz clic en este enlace: <a href="' . base_url() . 'reset_password/' . $token . '">Recuperar Contrasena</a>';
+
+            $mail->send();
+            return true;
+        } catch (Exception $e) {
+            // Manejo de errores
+            // echo 'El mensaje no pudo ser enviado. Error: ', $mail->ErrorInfo;
+            return false;
+        }
     }
 
     public function show_reset_password_form($token = null)
@@ -235,8 +261,13 @@ class Users extends BaseController
         }
 
         $data['titulo'] = 'Restablecer Contraseña';
-        return view('reset_password', $data);
+        $data['reset_token'] = $token; // Pasar el token a la vista
+
+        return view('templates/header', $data)
+            . view('reset_password', $data)
+            . view('templates/footer');
     }
+
 
     public function reset_password_process()
     {
@@ -260,24 +291,29 @@ class Users extends BaseController
         ]);
 
         if ($validation->withRequest($request)->run()) {
-            // Obtener el token de reset almacenado en sesión
             $resetToken = $request->getPost('reset_token');
+            $session = session();
+            $storedToken = $session->getTempdata('reset_token');
+            $email = $session->getTempdata('reset_email');
 
-            // Validar el token (opcional, pero recomendado)
-            // Aquí puedes agregar lógica para validar el token si es necesario
+            if (!$storedToken || $resetToken !== $storedToken || !$email) {
+                return redirect()->to('/login')->with('err', 'El token para restablecer la contraseña es inválido o ha expirado.');
+            }
 
-            // Obtener el usuario por el token (opcional, pero recomendado)
-            // Aquí puedes agregar lógica para obtener el usuario asociado al token
+            $usuario = $userModel->where('usuario_email', $email)->first();
+            if (!$usuario) {
+                return redirect()->to('/login')->with('err', 'No se encontró ningún usuario con este correo electrónico.');
+            }
 
-            // Actualizar la contraseña del usuario
-            // Aquí actualizas la contraseña del usuario en la base de datos
-            // Ejemplo: $userModel->update($usuario_id, ['usuario_password' => password_hash($request->getPost('new_password'), PASSWORD_DEFAULT)]);
+            $newPasswordHash = password_hash($request->getPost('new_password'), PASSWORD_DEFAULT);
+            $userModel->update($usuario['usuario_id'], ['usuario_password' => $newPasswordHash]);
 
-            // Redireccionar al login con un mensaje de éxito
+            $session->removeTempdata('reset_token');
+            $session->removeTempdata('reset_email');
+
             return redirect()->to('/login')->with('message', 'Contraseña restablecida correctamente. Por favor, inicia sesión con tu nueva contraseña.');
         }
 
-        // Si la validación falla, mostrar errores en la vista de reset_password
         $data['titulo'] = 'Restablecer Contraseña';
         $data['validation'] = $validation->getErrors();
 

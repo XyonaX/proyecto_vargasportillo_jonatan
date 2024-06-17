@@ -30,33 +30,43 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/commercialization', 'Commercialization::index');
 $routes->get('/about', 'About::index');
 $routes->get('/contact', 'Contact::index');
 $routes->get('/products', 'Products::index');
 $routes->get('/terms', 'Terms::index');
+
+$routes->group('', ['filter' => 'admin'], function ($routes) {
+    // Rutas administrativas que requieren autenticación de administrador
+    $routes->get('/consultas', 'Consultas::index');
+    $routes->get('/gestionProductos', 'GestionProductos::index');
+    $routes->get('/gestionProductos/activar_desactivar/(:num)', 'GestionProductos::activar_desactivar/$1');
+    $routes->get('/ver_usuarios', 'Users::listar_usuarios');
+    $routes->post('/usuarios/toggle_estado/(:num)', 'Users::toggle_estado/$1');
+    $routes->post('/consultas/toggle_visto/(:num)', 'Consultas::toggle_visto/$1');
+    $routes->post('/gestionProductos', 'GestionProductos::add_producto');
+    $routes->post('/gestionProductos/edit_product', 'GestionProductos::edit_product');
+});
+
+// Rutas de autenticación y usuario
 $routes->get('/login', 'Users::login');
 $routes->get('/register', 'Users::register');
+$routes->post('/register', 'Users::register_user');
+$routes->post('/login', 'Users::login_user');
 $routes->get('/logout', 'Users::logout_user');
+$routes->get('/scriptMailer', 'Users::index');
+
+// Rutas para el carrito de compras
 $routes->get('/carrito', 'Carrito::index');
-$routes->get('/consultas', 'Consultas::index',['filter' => 'admin']);
-$routes->get('/gestionProductos', 'GestionProductos::index', ['filter' => 'admin']);
-$routes->get('/gestionProductos/activar_desactivar/(:num)', 'GestionProductos::activar_desactivar/$1', ['filter' => 'admin']);
+$routes->post('/add_carrito', 'Carrito::agregar_carrito');
 $routes->get('/remove_item/(:any)', 'Carrito::eliminar_item/$1');
 $routes->get('/delete_cart', 'Carrito::eliminar_carrito');
 $routes->get('/ventas', 'Carrito::guardar_venta');
-$routes->get('/ver_ventas', 'Ventas::index',['filter' => 'admin']);
-$routes->get('/ventas/factura/(:num)', 'Ventas::factura/$1', ['filter' => 'admin']);
-$routes->get('/ventas/descargarPDF/(:num)', 'Ventas::descargarPDF/$1', ['filter' => 'admin']);
 
-$routes->post('/contact', 'Contact::add_consulta');
-$routes->post('/register', 'Users::register_user');
-$routes->post('/login', 'Users::login_user');
-$routes->post('/gestionProductos', 'GestionProductos::add_producto', ['filter' => 'admin']);
-$routes->post('/gestionProductos/edit_product', 'GestionProductos::edit_product', ['filter' => 'admin']);
-$routes->post('/consultas/toggle_visto/(:num)', 'Consultas::toggle_visto/$1',['filter' => 'admin']);
-$routes->post('/add_carrito', 'Carrito::agregar_carrito');
-
+// Rutas específicas para la recuperación de contraseña
+$routes->get('/forgot_password', 'Users::forgot_password'); // Vista para ingresar el correo
+$routes->post('/forgot_password', 'Users::forgot_password'); // Procesar envío de instrucciones de recuperación
+$routes->get('/reset_password/(:any)', 'Users::show_reset_password_form/$1'); // Formulario para restablecer la contraseña
+$routes->post('/reset_password_process', 'Users::reset_password_process'); // Procesar restablecimiento de contraseña
 
 
 
