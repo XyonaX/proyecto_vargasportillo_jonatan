@@ -1,7 +1,7 @@
 <?php $cart = \Config\Services::cart(); ?>
 
 <main class="min-vh-100 d-flex justify-content-center align-items-center flex-column">
-    <div class="container-fluid">
+    <div class="container-fluid d-flex flex-column text-center">
         <h2 class="text-center">Carrito de compras</h2>
         <div class="row">
             <?php if ($cart->contents() == NULL) { ?>
@@ -43,6 +43,12 @@
                     </table>
                 </div>
             <?php } ?>
+
         </div>
+        <div>
+
+            <a class="btn btn-primary" href="products">Seguir Comprando</a>
+        </div>
+
     </div>
 </main>
