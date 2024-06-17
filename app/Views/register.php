@@ -67,7 +67,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.enviar-registro').addEventListener('click', function(event) {
             event.preventDefault();
-            var form = document.getElementById('loginForm');
+            var form = this.closest('form');
             Swal.fire({
                 position: "top-center",
                 icon: "success",
