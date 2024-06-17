@@ -80,6 +80,7 @@ class Users extends BaseController
                 'usuario_direccion' => $request->getPost('direccion'),
                 'usuario_email' => $request->getPost('email'),
                 'usuario_password' => password_hash($request->getPost('password'), PASSWORD_DEFAULT),
+                'usuario_estado' => 1,
             ];
 
             $userModel->insert($data);
@@ -114,6 +115,7 @@ class Users extends BaseController
                     'usuario_apellido' => $usuarioEncontrado['usuario_apellido'],
                     'usuario_email' => $usuarioEncontrado['usuario_email'],
                     'rol_id' => $usuarioEncontrado['rol_id'],
+                    'usuario_estado' => $usuarioEncontrado['usuario_estado'],
                     'isLoggedIn' => true,
                 ]);
                 return redirect()->to('/')->with('message', 'Login exitoso!');
