@@ -41,10 +41,14 @@ $routes->group('', ['filter' => 'admin'], function ($routes) {
     $routes->get('/gestionProductos', 'GestionProductos::index');
     $routes->get('/gestionProductos/activar_desactivar/(:num)', 'GestionProductos::activar_desactivar/$1');
     $routes->get('/ver_usuarios', 'Users::listar_usuarios');
+    $routes->get('/ver_ventas', 'Ventas::index');
+    $routes->get('/ventas/factura/(:num)', 'Ventas::factura/$1');
+    $routes->get('/ventas/descargarPDF/(:num)', 'Ventas::descargarPDF/$1');
     $routes->post('/usuarios/toggle_estado/(:num)', 'Users::toggle_estado/$1');
     $routes->post('/consultas/toggle_visto/(:num)', 'Consultas::toggle_visto/$1');
     $routes->post('/gestionProductos', 'GestionProductos::add_producto');
     $routes->post('/gestionProductos/edit_product', 'GestionProductos::edit_product');
+
 });
 
 // Rutas de autenticación y usuario
@@ -53,7 +57,6 @@ $routes->get('/register', 'Users::register');
 $routes->post('/register', 'Users::register_user');
 $routes->post('/login', 'Users::login_user');
 $routes->get('/logout', 'Users::logout_user');
-$routes->get('/scriptMailer', 'Users::index');
 
 // Rutas para el carrito de compras
 $routes->get('/carrito', 'Carrito::index');
