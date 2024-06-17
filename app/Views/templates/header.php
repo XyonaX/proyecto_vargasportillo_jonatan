@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/miestilo.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/tablas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.1/dist/sweetalert2.min.css">
 </head>
 
 <body class="">
