@@ -99,7 +99,7 @@
                 if (result.isConfirmed) {
                     window.location.href = href;
                 } else {
-                    window.location.href = href;
+                    window.location.href = href;  
                 }
             });
         });
