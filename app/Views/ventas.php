@@ -27,10 +27,10 @@
                                     <td class="text-center"><?= esc($venta['usuario_nombre']) ?></td>
                                     <td class="text-center"><?= esc($venta['venta_fecha']) ?></td>
                                     <td class="text-center">
-                                        <a href="<?= base_url('ventas/factura/' . $venta['venta_id']) ?>" target="_blank" class="btn btn-info text-white">Ver Detalle</a>
+                                        <a href="<?= base_url('ventas/factura/' . $venta['venta_id']) ?>" target="_blank" class="btn btn-info text-white abrir-detalle">Ver Detalle</a>
                                     </td>
                                     <td class="text-center">
-                                        <a href="<?= base_url('ventas/descargarPDF/' . $venta['venta_id']) ?>" target="_blank" class="btn btn-primary text-white">Descargar PDF</a>
+                                        <a href="<?= base_url('ventas/descargarPDF/' . $venta['venta_id']) ?>" target="_blank" class="btn btn-primary text-white descargar-pdf">Descargar PDF</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -49,3 +49,34 @@
         </div>
     </div>
 </main>
+
+<script>
+    document.querySelectorAll('.abrir-detalle').forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            var href = this.getAttribute('href');
+            Swal.fire({
+                icon: "success",
+                title: "Abriendo Detalle...",
+                showConfirmButton: false,
+                timer: 1500,
+            }).then(() => {
+                window.location.href = href;
+            });
+        });
+    });
+    document.querySelectorAll('.descargar-pdf').forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            var href = this.getAttribute('href');
+            Swal.fire({
+                icon: "success",
+                title: "Descargando Factura...",
+                showConfirmButton: false,
+                timer: 1500,
+            }).then(() => {
+                window.location.href = href;
+            });
+        });
+    });
+</script>
