@@ -1,6 +1,6 @@
 <?php $cart = \Config\Services::cart(); ?>
 
-<main class="min-vh-100 d-flex justify-content-center align-items-center flex-column">
+<main class="min-vh-100 d-flex justify-content-center align-items-center flex-column animate__animated animate__fadeInDown">
     <div class="container-fluid d-flex flex-column text-center">
         <h2 class="text-center">Carrito de compras</h2>
         <div class="row">

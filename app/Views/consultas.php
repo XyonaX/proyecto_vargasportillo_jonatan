@@ -1,4 +1,4 @@
-<main class="min-vh-100">
+<main class="min-vh-100 animate__animated animate__fadeInDown">
 <div class="container mt-5">
     <h1 class="text-center"><?= $titulo ?></h1>
 
