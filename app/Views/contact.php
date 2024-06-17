@@ -26,14 +26,13 @@
                 </div>
                 <div class="col-lg-6">
 
-
                     <?php if(session('message')): ?>
                         <div class="alert alert-success mt-3" role="alert">
                             <?= session('message') ?>
                         </div>
                     <?php endif; ?>
 
-                    <?= form_open('contact', ['class' => 'p-2 border rounded-2 mb-3']) ?>
+                    <?= form_open('contact', ['class' => 'p-2 border rounded-2 mb-3', 'id' => 'contactForm']) ?>
                     <div class="mb-3">
                         <?= form_label('Nombre Completo', 'nombre', ['class' => 'form-label']) ?>
                         <?= form_input(['type' => 'text','name' => 'nombre', 'class' => 'form-control', 'placeholder' => 'Juan Perez', 'maxlength' => '150', 'value' => set_value('nombre')]) ?>
