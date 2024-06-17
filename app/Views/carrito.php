@@ -4,7 +4,7 @@
     <div class="container-fluid d-flex flex-column text-center">
         <h2 class="text-center">Carrito de compras</h2>
         <div class="row">
-            <?php if ($cart->contents() == NULL) { ?>
+            <?php if (empty($cart_contents)) { ?>
                 <h2 class="text-center alert-danger">Carrito está vacío</h2>
             <?php } else { ?>
                 <div class="table-responsive">
@@ -23,7 +23,7 @@
                             <?php
                             $total = 0;
                             $i = 1;
-                            foreach ($cart->contents() as $item) : ?>
+                            foreach ($cart_contents as $item) : ?>
                                 <tr>
                                     <td><?= $i++ ?></td>
                                     <td><?= esc($item['name']) ?></td>
@@ -43,12 +43,9 @@
                     </table>
                 </div>
             <?php } ?>
-
         </div>
         <div>
-
             <a class="btn btn-primary" href="products">Seguir Comprando</a>
         </div>
-
     </div>
 </main>
