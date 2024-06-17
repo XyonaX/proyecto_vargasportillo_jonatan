@@ -42,13 +42,11 @@
     }
 </style>
 
-
-
 <main class="min-vh-100 d-flex justify-content-center align-items-center flex-column animate__animated animate__fadeInDown">
 
     <div class="container container-fluid my-4">
         <div class="header">
-            <img src="<?= base_url('assets/images/brand.webp') ?>" alt="Logo">
+            <img src="<?= base_url('assets/images/brand.webp') ?>" alt="Logo" width="150">
 
             <h4>Factura #<?= esc($venta['venta_id']) ?></h4>
             <p><strong>Fecha:</strong> <?= esc($venta['venta_fecha']) ?></p>
