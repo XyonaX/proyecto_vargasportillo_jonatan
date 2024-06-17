@@ -32,6 +32,9 @@ chdir(FCPATH);
 require FCPATH . 'app/Config/Paths.php';
 // ^^^ Change this line if you move your application folder
 
+// Carga el autoload de Composer
+require FCPATH . 'vendor/autoload.php';
+
 $paths = new Config\Paths();
 
 // Location of the framework bootstrap file.
