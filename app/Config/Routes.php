@@ -46,7 +46,7 @@ $routes->get('/remove_item/(:any)', 'Carrito::eliminar_item/$1');
 $routes->get('/delete_cart', 'Carrito::eliminar_carrito');
 $routes->get('/ventas', 'Carrito::guardar_venta');
 $routes->get('/ver_ventas', 'Ventas::index',['filter' => 'admin']);
-$routes->get('/ver_detalle/(:num)', 'Ventas::listar_detalle_venta/$1',['filter' => 'admin']);
+$routes->get('/ventas/factura/(:num)', 'Ventas::factura/$1', ['filter' => 'admin']);
 
 $routes->post('/contact', 'Contact::add_consulta');
 $routes->post('/register', 'Users::register_user');
