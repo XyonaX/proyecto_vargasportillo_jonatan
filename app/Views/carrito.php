@@ -31,13 +31,13 @@
                                     <td><?= esc($item['qty']) ?></td>
                                     <td><?= esc($item['subtotal']);
                                         $total += $item['subtotal'] ?></td>
-                                    <td><?= anchor('/remove_item/' . $item['rowid'], 'Eliminar', ['class' => 'btn btn-danger text-white']); ?></td>
+                                    <td><?= anchor('/remove_item/' . $item['rowid'], 'Eliminar', ['class' => 'btn btn-danger text-white eliminar-item']); ?></td>
                                 </tr>
                             <?php endforeach; ?>
                             <tr>
                                 <td colspan="4">Total Compra: $<?= esc($total) ?></td>
-                                <td><?= anchor('/delete_cart', 'Vaciar Carrito', ['class' => 'btn btn-danger text-white']); ?></td>
-                                <td><a href="ventas" class="btn btn-success text-white" role="button">Ordenar Compra</a></td>
+                                <td><?= anchor('/delete_cart', 'Vaciar Carrito', ['class' => 'btn btn-danger text-white vaciar-carrito']); ?></td>
+                                <td><a href="ventas" class="btn btn-success text-white ordenar-compra" role="button">Ordenar Compra</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -49,3 +49,61 @@
         </div>
     </div>
 </main>
+
+<script>
+    // Eliminar item con confirmación
+    document.querySelectorAll('.eliminar-item').forEach(function(element) {
+        element.addEventListener('click', function(event) {
+            event.preventDefault();
+            var href = this.getAttribute('href');
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "¡No podrás revertir esto!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#047342',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminarlo!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = href;
+                }
+            });
+        });
+    });
+
+    // Vaciar carrito con confirmación
+    document.querySelector('.vaciar-carrito').addEventListener('click', function(event) {
+        event.preventDefault();
+        var href = this.getAttribute('href');
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "¡Todo el carrito será eliminado!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#047342',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, vaciar carrito!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = href;
+            }
+        });
+    });
+
+    document.querySelector('.ordenar-compra').addEventListener('click', function(event) {
+        event.preventDefault();
+        var href = this.getAttribute('href');
+        Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Compra Realizada",
+            showConfirmButton: true,
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = href;
+            }
+        });
+    });
+</script>

@@ -41,7 +41,7 @@
                                         <?= form_hidden('id', $producto['id_producto']) ?>
                                         <?= form_hidden('name', $producto['nombre_producto']) ?>
                                         <?= form_hidden('precio', $producto['precio_producto']) ?>
-                                        <?= form_submit('comprar', 'Comprar', "class='btn btn-success my-2'") ?>
+                                        <?= form_submit('comprar', 'Comprar', "class='btn btn-success my-2 agregar-al-carrito'") ?>
                                     <?= form_close() ?>
                                 <?php else : ?>
                                     <div class="d-flex justify-content-between my-2">
@@ -69,3 +69,21 @@
         </div>
     </div>
 </main>
+
+<script>
+    document.querySelectorAll('.agregar-al-carrito').forEach(function(button) {
+    button.addEventListener('click', function(event) {
+        event.preventDefault();
+        var form = this.closest('form');
+        Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Producto Agregado",
+            showConfirmButton: false,
+            timer: 1500
+        }).then(() => {
+            form.submit();
+        });
+    });
+});
+</script>
