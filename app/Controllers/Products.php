@@ -14,6 +14,7 @@ class Products extends BaseController
         $data['rol_id'] = $session->get('rol_id');
         $data['usuario_nombre'] = $session->get('usuario_nombre');
 
+        // Obtener productos activos con stock paginados
         $productos_paginados = $this->productsList();
 
         $data['productos'] = $productos_paginados['productos'];
@@ -31,7 +32,9 @@ class Products extends BaseController
         $pager = \Config\Services::pager();
 
         $perPage = 10; // Número de productos por página
-        $productos = $productsModel->where('activo', 1)->paginate($perPage, 'default');
+
+        // Obtener productos activos con stock
+        $productos = $productsModel->getProductosActivosConStockPaginados($perPage);
         $pager = $productsModel->pager;
 
         // Añade el nombre de la categoría a cada producto
@@ -39,6 +42,7 @@ class Products extends BaseController
             $categoria = $categoryModel->find($producto['id_categoria']);
             $producto['nombre_categoria'] = $categoria['nombre'];
         }
+
         return [
             'productos' => $productos,
             'pager' => $pager
