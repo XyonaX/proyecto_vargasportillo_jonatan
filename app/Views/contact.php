@@ -60,7 +60,7 @@
                         
                     </div>
                     <div class="d-flex justify-content-center">
-                        <?= form_submit('submit', 'Enviar', ['class' => 'btn btn-primary']) ?>
+                        <?= form_submit('enviarConsulta', 'Enviar', ['class' => 'btn btn-primary enviar-consulta']) ?>
                     </div>
                     <?= form_close() ?>
 
@@ -78,3 +78,20 @@
         </div>
     </section>
 </main>
+
+<script>
+    document.querySelectorAll('.enviar-consulta').forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            var form = this.closest('form')
+            Swal.fire({
+                icon: "success",
+                title: "Enviando Consulta...",
+                showConfirmButton: false,
+                timer: 1500
+            }).then(() => {
+                form.submit();
+            })
+        })
+    })
+</script>
