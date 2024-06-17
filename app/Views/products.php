@@ -38,14 +38,14 @@
                                 <h6 class="mb-3">$<?= esc($producto['precio_producto']) ?></h6>
                                 <?php if (isset($isLoggedIn) && $isLoggedIn) : ?>
                                     <?= form_open('add_carrito') ?>
-                                        <?= form_hidden('id', $producto['id_producto']) ?>
-                                        <?= form_hidden('name', $producto['nombre_producto']) ?>
-                                        <?= form_hidden('precio', $producto['precio_producto']) ?>
-                                        <?= form_submit('comprar', 'Comprar', "class='btn btn-success my-2 agregar-al-carrito'") ?>
+                                    <?= form_hidden('id', $producto['id_producto']) ?>
+                                    <?= form_hidden('name', $producto['nombre_producto']) ?>
+                                    <?= form_hidden('precio', $producto['precio_producto']) ?>
+                                    <?= form_submit('comprar', 'Comprar', "class='btn btn-success my-2 agregar-al-carrito'") ?>
                                     <?= form_close() ?>
                                 <?php else : ?>
                                     <div class="d-flex justify-content-between my-2">
-                                        <a href="" class="btn btn-success d-none">Comprar</a>
+                                        <a href="login" class="btn btn-success iniciar-sesion">Comprar</a>
                                     </div>
                                 <?php endif ?>
                             </div>
@@ -72,18 +72,36 @@
 
 <script>
     document.querySelectorAll('.agregar-al-carrito').forEach(function(button) {
-    button.addEventListener('click', function(event) {
-        event.preventDefault();
-        var form = this.closest('form');
-        Swal.fire({
-            position: "top-center",
-            icon: "success",
-            title: "Producto Agregado",
-            showConfirmButton: false,
-            timer: 1500
-        }).then(() => {
-            form.submit();
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            var form = this.closest('form');
+            Swal.fire({
+                position: "top-center",
+                icon: "success",
+                title: "Producto Agregado",
+                showConfirmButton: false,
+                timer: 1500
+            }).then(() => {
+                form.submit();
+            });
         });
     });
-});
+
+    document.querySelectorAll('.iniciar-sesion').forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            var href = this.getAttribute('href');
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Debes Iniciar Sesión",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = href;
+                } else {
+                    window.location.href = href;
+                }
+            });
+        });
+    });
 </script>
