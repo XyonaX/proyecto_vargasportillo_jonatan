@@ -26,7 +26,7 @@
                             <td class="text-center"><?= $consulta['consultas_visto'] ? 'Sí' : 'No' ?></td>
                             <td class="text-center">
                                 <form action="<?= base_url('/consultas/toggle_visto/' . $consulta['consultas_id']) ?>" method="post">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary marcar-vista">
                                         <?= $consulta['consultas_visto'] ? 'Marcar como No Visto' : 'Marcar como Visto' ?>
                                     </button>
                                 </form>
@@ -44,3 +44,23 @@
     <?php endif; ?>
 </div>
 </main>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('.marcar-vista').addEventListener('click', function(event) {
+            event.preventDefault();
+            var form = this.closest('form');
+            Swal.fire({
+                position: "top-center",
+                icon: "success",
+                title: "Cambiando valores...",
+                showConfirmButton: false,
+                timer: 1500
+            }).then(() => {
+                form.submit();
+            });
+        });
+    });
+</script>
