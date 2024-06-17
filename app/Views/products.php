@@ -41,7 +41,7 @@
                                         <?= form_hidden('id', $producto['id_producto']) ?>
                                         <?= form_hidden('name', $producto['nombre_producto']) ?>
                                         <?= form_hidden('precio', $producto['precio_producto']) ?>
-                                        <?= form_submit('comprar', 'Comprar', "class='btn btn-success'") ?>
+                                        <?= form_submit('comprar', 'Comprar', "class='btn btn-success my-2'") ?>
                                     <?= form_close() ?>
                                 <?php else : ?>
                                     <div class="d-flex justify-content-between my-2">
