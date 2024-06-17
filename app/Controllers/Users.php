@@ -3,7 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\Users_model;
-use Tests\Support\Models\UserModel;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 class Users extends BaseController
 {
@@ -130,6 +131,44 @@ class Users extends BaseController
         $session->destroy();
 
         return redirect()->to('/')->with('message', 'Sesión cerrada correctamente.');
+    }
+
+    public function listar_usuarios()
+    {
+        $userModel = new Users_model();
+        $pager = \Config\Services::pager();
+        $request = \Config\Services::request();
+
+        $perPage = 5; // Número de usuarios por página
+        $currentPage = $request->getVar('page') ?: 1;
+
+        $usuarios = $userModel->paginate($perPage, 'default', $currentPage);
+        $pager = $userModel->pager;
+        $pager->setPath('listar_usuarios'); // Ruta personalizada
+
+        $data = [
+            'titulo' => 'Listado de Usuarios',
+            'usuarios' => $usuarios,
+            'pager' => $pager,
+        ];
+
+        return view('templates/header', $data)
+            . view('listar_usuarios', $data)
+            . view('templates/footer');
+    }
+
+    public function toggle_estado($usuarioId)
+    {
+        $userModel = new Users_model();
+        $usuario = $userModel->find($usuarioId);
+
+        if ($usuario) {
+            $nuevoEstado = $usuario['usuario_estado'] == 1 ? 0 : 1;
+            $userModel->update($usuarioId, ['usuario_estado' => $nuevoEstado]);
+            return redirect()->to('/ver_usuarios')->with('message', 'Estado del usuario actualizado correctamente');
+        } else {
+            return redirect()->to('/ver_usuarios')->with('err', 'Usuario no encontrado');
+        }
     }
 
     public function forgot_password()
