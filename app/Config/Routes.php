@@ -34,6 +34,7 @@ $routes->get('/commercialization', 'Commercialization::index');
 $routes->get('/about', 'About::index');
 $routes->get('/contact', 'Contact::index');
 $routes->get('/products', 'Products::index');
+$routes->get('/products/(:segment)', 'Products::index'); 
 $routes->get('/terms', 'Terms::index');
 $routes->get('/login', 'Users::login');
 $routes->get('/register', 'Users::register');
