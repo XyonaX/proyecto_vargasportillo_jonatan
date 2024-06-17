@@ -54,11 +54,29 @@
         <?php endif; ?>
     </div>
     <div class="login d-flex justify-content-end align-content-center">
-        <a href="" class="nav-link">¿Ya tienes una cuenta?</a>
+        <a href="login" class="nav-link">¿Ya tienes una cuenta?</a>
     </div>
 
     <div class="d-flex justify-content-center mt-2">
-        <?= form_submit('submit', 'Registrarse', ['class' => 'btn btn-primary']) ?>
+        <?= form_submit('submit-registro', 'Registrarse', ['class' => 'btn btn-primary enviar-registro']) ?>
     </div>
     <?= form_close() ?>
 </main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('.enviar-registro').addEventListener('click', function(event) {
+            event.preventDefault();
+            var form = document.getElementById('loginForm');
+            Swal.fire({
+                position: "top-center",
+                icon: "success",
+                title: "Regsitrando...",
+                showConfirmButton: false,
+                timer: 1500
+            }).then(() => {
+                form.submit();
+            });
+        });
+    });
+</script>
