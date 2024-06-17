@@ -1,5 +1,5 @@
 <main class="min-vh-100 d-flex justify-content-center align-items-center flex-column">
-    <div class="container">
+    <div class="container-fluid">
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
