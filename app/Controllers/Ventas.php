@@ -3,7 +3,9 @@
 namespace App\Controllers;
 
 use App\Models\DetalleVenta_model;
+use App\Models\Products_model;
 use App\Models\Ventas_model;
+use App\Models\Users_model;
 
 class Ventas extends BaseController
 {
@@ -15,28 +17,60 @@ class Ventas extends BaseController
         $data['usuario_nombre'] = $session->get('usuario_nombre');
         $data['titulo'] = 'Ventas';
 
-        $venta = new Ventas_model();
-        $data['ventas'] = $venta->join('usuarios', 'usuarios.usuario_id = ventas.id_cliente')
+        $ventaModel = new Ventas_model();
+        $data['ventas'] = $ventaModel->join('usuarios', 'usuarios.usuario_id = ventas.id_cliente')
             ->paginate(10); // Reutilizar paginación existente
-        $data['pager'] = $venta->pager;
+        $data['pager'] = $ventaModel->pager;
 
         return view('templates/header', $data)
             . view('ventas', $data)
             . view('templates/footer');
     }
 
-    public function listar_detalle_ventas($id = NULL)
+    public function factura($id = NULL)
     {
-        $venta = new Ventas_model();
-        $detalle_venta = new DetalleVenta_model();
-        $data['titulo'] = "Detalle de Ventas";
+        $session = session();
+        $ventaModel = new Ventas_model();
+        $detalleVentaModel = new DetalleVenta_model();
+        $usersModel = new Users_model();
+        $productosModel = new Products_model();
 
-        $data['ventas'] = $venta->where('venta_id', $id)
-            ->join('usuarios', 'usuarios.usuario_id = ventas.id_cliente')
-            ->first();
-        $data['detalle_venta'] = $detalle_venta->where('id_venta', $id)
-            ->join('productos', 'productos.id_producto = detalle_venta.id_producto')
-            ->findAll();
+        $venta = $ventaModel->find($id);
+        if (!$venta) {
+            // Manejo de error si la venta no existe
+            throw new \RuntimeException("Venta con ID {$id} no encontrada");
+        }
+
+        $detalleVenta = $detalleVentaModel->where('id_venta', $id)->findAll();
+
+        // Calcular el total de la venta sumando los subtotales de cada detalle
+        $totalVenta = 0;
+        foreach ($detalleVenta as &$detalle) {
+            $subtotal = $detalle['detalle_cantidad'] * $detalle['detalle_precio'];
+            $totalVenta += $subtotal;
+
+            // Obtener nombre del producto para cada detalle de venta
+            $producto = $productosModel->find($detalle['id_producto']);
+            if ($producto) {
+                $detalle['nombre_producto'] = $producto['nombre_producto']; // Ajusta según el campo de nombre en tu tabla de productos
+            } else {
+                $detalle['nombre_producto'] = 'Producto no encontrado'; // Manejo de caso donde el producto no existe (opcional)
+            }
+        }
+
+        // Obtener datos del usuario asociado a la venta
+        $usuario = $usersModel->find($venta['id_cliente']); // Asumiendo que 'id_cliente' es la clave foránea que une ventas con usuarios
+
+        $data = [
+            'venta' => $venta,
+            'detalleVenta' => $detalleVenta,
+            'usuario' => $usuario, // Pasamos los datos del usuario a la vista
+            'total_venta' => $totalVenta, // Pasamos el total de la venta a la vista
+            'titulo' => 'Detalle de Venta', // Título de la página
+            'rol_id' => $session->get('rol_id'),
+            'isLoggedIn' => $session->get('isLoggedIn'),
+            'usuario_nombre' => $session->get('usuario_nombre'),
+        ];
 
         return view('templates/header', $data)
             . view('listar_detalle_ventas', $data)
