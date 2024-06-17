@@ -12,6 +12,7 @@
         "jason-napolitano/codeigniter4-cart-module": "^1.1",
         "laminas/laminas-escaper": "^2.9",
         "mpdf/mpdf": "^8.2",
+        "phpmailer/phpmailer": "^6.9",
         "psr/log": "^1.1"
     },
     "require-dev": {
