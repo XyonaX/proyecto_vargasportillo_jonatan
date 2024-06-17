@@ -131,7 +131,7 @@
                     ?>
                 </div>
                 <div class="modal-footer">
-                    <?= form_submit('submit', 'Agregar Producto', ['class' => 'btn btn-primary']) ?>
+                    <?= form_submit('submit-producto', 'Agregar Producto', ['class' => 'btn btn-primary agregar-producto']) ?>
                 </div>
                 <?= form_close() ?>
             </div>
@@ -206,10 +206,43 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <?= form_submit('submit', 'Guardar Cambios', ['class' => 'btn btn-primary']) ?>
+                    <?= form_submit('edit-producto', 'Guardar Cambios', ['class' => 'btn btn-primary editar-producto']) ?>
                 </div>
                 <?= form_close() ?>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('.agregar-producto').addEventListener('click', function(event) {
+            event.preventDefault();
+            var form = this.closest('form');
+            Swal.fire({
+                position: "top-center",
+                icon: "success",
+                title: "Agregando Producto...",
+                showConfirmButton: false,
+                timer: 1500
+            }).then(() => {
+                form.submit();
+            });
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('.editar-producto').addEventListener('click', function(event) {
+            event.preventDefault();
+            var form = this.closest('form');
+            Swal.fire({
+                position: "top-center",
+                icon: "success",
+                title: "Editando Producto...",
+                showConfirmButton: false,
+                timer: 1500
+            }).then(() => {
+                form.submit();
+            });
+        });
+    });
+</script>
