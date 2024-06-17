@@ -67,5 +67,5 @@
                 <?= $pager->links('default', 'custom_pagination') ?>
             </div>
         </div>
-
+    </div>
 </main>

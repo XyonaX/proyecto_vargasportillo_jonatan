@@ -29,16 +29,10 @@ class Products extends BaseController
         $productsModel = new Products_model();
         $categoryModel = new Category_model();
         $pager = \Config\Services::pager();
-        $request = \Config\Services::request();
 
-        $perPage = 10; // numero de productos por pagina
-
-        $currentPage = $request->getVar('page') ?: 1;
-        // Obtén todos los productos paginados
-        $productos = $productsModel->where('activo', 1)->paginate($perPage, 'default', $currentPage);
-
+        $perPage = 10; // Número de productos por página
+        $productos = $productsModel->where('activo', 1)->paginate($perPage, 'default');
         $pager = $productsModel->pager;
-        $pager->setPath('products');
 
         // Añade el nombre de la categoría a cada producto
         foreach ($productos as &$producto) {
