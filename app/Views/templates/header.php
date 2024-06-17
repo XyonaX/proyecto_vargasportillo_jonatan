@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo $titulo ?></title>
-    <link rel="icon" href="assets/images/icon.webp" type="image/x-icon">
+    <link rel="icon" href="<?php echo base_url("assets/images/icon.webp") ?>" type="image/x-icon">
     <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/miestilo.css">
@@ -23,7 +23,7 @@
                         <nav class="container-fluid navbar navbar-expand-lg">
                             <div class="container-fluid">
                                 <a class="navbar-brand" href="<?php echo base_url('/') ?>">
-                                    <img class="img-fluid" src="assets/images/brand.webp" alt="brand" style="height: 50px;">
+                                    <img class="img-fluid" src="<?php echo base_url("assets/images/brand.webp") ?>" alt="brand" style="height: 50px;">
                                 </a>
                                 <?php if (isset($isLoggedIn) && $isLoggedIn) : ?>
 
@@ -34,7 +34,7 @@
 
                                         <div class="collapse-user">
                                             <button class="user-btn btn btn-dark dropdown-toggle d-lg-none" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <img src="assets/images/person-icon.svg" class="img-fluid" alt="">
+                                                <img src="<?php echo base_url("assets/images/person-icon.svg") ?>" class="img-fluid" alt="">
                                                 <span><?= esc($usuario_nombre) ?></span>
                                             </button>
 
@@ -81,7 +81,7 @@
                                                                 <ul class="navbar-nav">
                                                                     <li class="nav-item dropdown">
                                                                         <button class="user-btn btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                            <img src="assets/images/person-icon.svg" class="img-fluid" alt="">
+                                                                            <img src="<?= base_url('assets/images/person-icon.svg') ?>" class="img-fluid" alt="Icono de persona">
                                                                             <span><?= esc($usuario_nombre) ?></span>
                                                                         </button>
                                                                         <?php if (isset($rol_id) && $rol_id === '1') : ?>
@@ -118,7 +118,7 @@
                                         </button>
                                         <div class="collapse-user">
                                             <button class="user-btn btn btn-dark dropdown-toggle d-lg-none" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <img src="assets/images/person-icon.svg" class="img-fluid" alt="">
+                                                <img src="<?php echo base_url("assets/images/person-icon.svg") ?>" class="img-fluid" alt="">
                                             </button>
                                             <ul class="dropdown-menu dropdown-menu-dark">
                                                 <li class="nav-item">
@@ -148,7 +148,7 @@
                                                 <div class="collapse-user">
                                                     <li class="nav-item dropdown">
                                                         <button class="user-btn btn btn-dark dropdown-toggle ms-2" data-bs-toggle="dropdown" aria-expanded="false">
-                                                            <img src="assets/images/person-icon.svg" class="img-fluid" alt="">
+                                                            <img src="<?php echo base_url("assets/images/person-icon.svg") ?>" class="img-fluid" alt="">
                                                         </button>
                                                         <ul class="dropdown-menu dropdown-menu-dark">
                                                             <li class="nav-item">
