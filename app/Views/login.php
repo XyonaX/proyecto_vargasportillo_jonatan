@@ -17,7 +17,7 @@
             'name' => 'email',
             'class' => 'form-control',
             'placeholder' => 'Juanp@gmail.com',
-            'value' => set_value('email') // Utiliza set_value para mostrar el valor ingresado anteriormente
+            'value' => set_value('email'),
         ]) ?>
         <!-- Mostrar mensaje de error -->
         <?php if (isset($validation) && $validation->hasError('email')) : ?>
@@ -31,7 +31,7 @@
             'name' => 'password',
             'class' => 'form-control',
             'placeholder' => 'Contraseña',
-            'value' => set_value('password') // Utiliza set_value para mostrar el valor ingresado anteriormente
+            'value' => set_value('password'),
         ]) ?>
         <!-- Mostrar mensaje de error -->
         <?php if (isset($validation) && $validation->hasError('password')) : ?>
@@ -39,7 +39,8 @@
         <?php endif; ?>
     </div>
     <div class="login d-flex justify-content-end align-content-center">
-        <a href="" class="nav-link">Recuperar contraseña</a>
+        <a href="<?= base_url('forgot_password') ?>" class="nav-link">Recuperar contraseña</a>
+
     </div>
 
     <div class="d-flex justify-content-center mt-2">
@@ -48,7 +49,6 @@
     <?= form_close() ?>
 </main>
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.enviar-login').addEventListener('click', function(event) {
