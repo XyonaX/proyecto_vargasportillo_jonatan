@@ -23,10 +23,10 @@
                         <a class="nav-link text-white" href="<?php echo base_url('/contact'); ?>">Contáctanos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="<?php echo base_url('/support'); ?>">Soporte</a>
+                        <a class="nav-link text-white disabled" href="<?php echo base_url('/support'); ?>">Soporte</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="<?php echo base_url('/faq'); ?>">Preguntas Frecuentes</a>
+                        <a class="nav-link text-white disabled" href="<?php echo base_url('/faq'); ?>">Preguntas Frecuentes</a>
                     </li>
                 </ul>
             </div>
@@ -34,13 +34,13 @@
                 <h5>Servicios</h5>
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="<?php echo base_url('/services'); ?>">Nuestros Servicios</a>
+                        <a class="nav-link text-white disabled" href="<?php echo base_url('/services'); ?>">Nuestros Servicios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="<?php echo base_url('/pricing'); ?>">Precios</a>
+                        <a class="nav-link text-white" href="<?php echo base_url('/products'); ?>">Precios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="<?php echo base_url('/testimonials'); ?>">Testimonios</a>
+                        <a class="nav-link text-white disabled" href="<?php echo base_url('/testimonials'); ?>">Testimonios</a>
                     </li>
                 </ul>
             </div>
