@@ -134,28 +134,33 @@ class Users extends BaseController
     }
 
     public function listar_usuarios()
-    {
+    {   
         $userModel = new Users_model();
         $pager = \Config\Services::pager();
         $request = \Config\Services::request();
-
+    
+        $session = session();
+        $data['isLoggedIn'] = $session->get('isLoggedIn');
+        $data['rol_id'] = $session->get('rol_id');
+        $data['usuario_nombre'] = $session->get('usuario_nombre');
+    
         $perPage = 5; // Número de usuarios por página
         $currentPage = $request->getVar('page') ?: 1;
-
+    
         $usuarios = $userModel->paginate($perPage, 'default', $currentPage);
         $pager = $userModel->pager;
         $pager->setPath('listar_usuarios'); // Ruta personalizada
-
-        $data = [
-            'titulo' => 'Listado de Usuarios',
-            'usuarios' => $usuarios,
-            'pager' => $pager,
-        ];
-
+    
+        $data['titulo'] = 'Listado de Usuarios';
+        $data['usuarios'] = $usuarios;
+        $data['pager'] = $pager;
+    
         return view('templates/header', $data)
             . view('listar_usuarios', $data)
             . view('templates/footer');
     }
+    
+
 
     public function toggle_estado($usuarioId)
     {
