@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+.login-section, .registration-section{
+    font-family: "Roboto", sans-serif;
+    background: url(https://i.ibb.co/BCcg3Mp/bg.png) no-repeat center center
+        fixed;
+    background-size: cover;
+}
+
+.main-section, .registration-main-section {
+    margin: 0 auto;
+    margin-top: 130px;
+    padding: 0;
+}
+
+.modal-content, .registration-modal-content {
+    background: #405046;
+    opacity: 0.9;
+    padding: 0 18px;
+    box-shadow: 0px 0px 3px #848484;
+    width: 400px;
+}
+
+.user-img, .registration-user-img {
+    margin-top: -50px;
+    margin-bottom: 35px;
+}
+
+.user-img img, .registration-user-img  img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2px #848484;
+}
+
+.form-group ,.registration-form-group{
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-group input, .registration-form-group input{
+    height: 45px;
+    border-radius: 5px;
+    border: 0;
+    font-size: 18px;
+    padding-left: 54px;
+}
+
+.form-group::before {
+    content: "\f2bd";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    font-size: 22px;
+    color: #555e60;
+    left: 28px;
+    padding-top: 4px;
+}
+
+.form-group:last-of-type::before {
+    content: "\f4f5";
+    font-family: "Font Awesome 5 Brands";
+    position: absolute;
+    font-size: 22px;
+    color: #555e60;
+    left: 28px;
+    padding-top: 4px;
+}
+
+#button {
+    width: 100%;
+    margin: 5px 0 25px;
+}
+
+.btn-ux {
+    background-color: #e17342 !important;
+    color: #fff;
+    font-size: 19px;
+    padding: 7px 14px;
+    border-radius: 5px;
+    border-bottom: 4px solid #a75430 !important;
+}
+
+.btn-ux:hover,
+.btn-ux:focus {
+    background-color: #a75430 !important;
+    border-bottom: 4px solid #a75430 !important;
+}
+
+.fa-sign-in-alt {
+    font-size: 20px;
+    margin-right: 7px;
+}
+
+.forgot {
+    padding: 5px 0 25px;
+}
+
+.forgot a {
+    color: #ebc08f;
+}
