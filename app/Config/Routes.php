@@ -34,6 +34,7 @@ $routes->get('/about', 'About::index');
 $routes->get('/contact', 'Contact::index');
 $routes->get('/products', 'Products::index');
 $routes->get('/terms', 'Terms::index');
+$routes->get('/commercialization', 'Commercialization::index');
 
 $routes->group('', ['filter' => 'admin'], function ($routes) {
     // Rutas administrativas que requieren autenticación de administrador
