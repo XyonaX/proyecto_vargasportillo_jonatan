@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
     padding: 0;
@@ -8,25 +8,32 @@
 }
 
 body {
-    background-image: linear-gradient(90deg, rgba(130,117,255,1) 0%, rgba(107,4,253,1) 35%, rgba(44,0,118,1) 100%);
+    background-image: linear-gradient(
+        90deg,
+        rgba(130, 117, 255, 1) 0%,
+        rgba(107, 4, 253, 1) 35%,
+        rgba(44, 0, 118, 1) 100%
+    );
     overflow-x: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
-
-
-nav{
-    background: linear-gradient(90deg, rgba(130,117,255,1) 0%, rgba(107,4,253,1) 35%, rgba(44,0,118,1) 100%);
-    border-bottom: 3px solid transparent; 
-    border-image: linear-gradient(to right, #d9ceff,  #7916ff) 1;
+nav {
+    background: linear-gradient(
+        90deg,
+        rgba(130, 117, 255, 1) 0%,
+        rgba(107, 4, 253, 1) 35%,
+        rgba(44, 0, 118, 1) 100%
+    );
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(to right, #d9ceff, #7916ff) 1;
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
 }
 
-.card-cel-text{
+.card-cel-text {
     text-align: justify;
 }
 
@@ -35,17 +42,16 @@ nav{
     font-weight: 600 !important;
 }
 
-
 .nav-link:hover {
     color: #843dff;
     text-decoration: underline;
 }
 
-.login .nav-link{
+.login .nav-link {
     font-weight: 400 !important;
 }
 
-.login .nav-link:hover{
+.login .nav-link:hover {
     color: #d9ceff;
     text-decoration: none;
 }
@@ -57,26 +63,25 @@ nav{
     border-radius: 10px;
 }
 
-.links{
+.links {
     color: #f3f1ff;
     text-decoration: none;
 }
 
-.links:hover{
+.links:hover {
     text-decoration: underline;
 }
 
-
-.navbar-toggler{
+.navbar-toggler {
     background-color: #701cfe !important;
     color: #7a4dfe;
 }
 
-.navbar-brand > img{
+.navbar-brand > img {
     width: 40px;
 }
 
-.carousel-item img{
+.carousel-item img {
     height: 340px !important;
 }
 
@@ -105,15 +110,15 @@ section {
     background-color: #2c0076 !important;
 }
 
-.featured-products .product-card{
-    background-color: #2c0076 ;
+.featured-products .product-card {
+    background-color: #2c0076;
     color: #f3f1ff;
     height: 554px;
     width: 100%;
     border-radius: 10px;
 }
 
-.product-card img{
+.product-card img {
     width: 306px;
 }
 
@@ -124,88 +129,103 @@ section {
     font-weight: 500;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: #2c0076 !important;
     border: 1px solid #2c0076;
 }
 
-.features-section .card{
+.features-section .card {
     color: #f3f1ff;
     background-color: #2c0076;
     border: 1px solid #d9ceff;
     width: auto;
 }
 
-.features-section .card svg{
+.features-section .card svg {
     fill: #d9ceff;
     background-color: #7916ff;
 }
 
-.testimonials .card{
-    background-color: #2c0076 ;
+.testimonials .card {
+    background-color: #2c0076;
     color: #f3f1ff;
     height: auto;
     width: auto;
-} 
+}
 
-.testimonials .card .blockquote-footer{
+.testimonials .card .blockquote-footer {
     color: #f3f1ff !important;
     margin-top: auto;
 }
 
-.about-section p{
+.about-section p {
     text-align: justify;
     line-height: 2;
     font-size: 18px;
 }
-.team-section .card{
-    background-image: linear-gradient(0deg,rgba(107,4,253,1) 0%, rgba(44,0,118,1) 100%);
+.team-section .card {
+    background-image: linear-gradient(
+        0deg,
+        rgba(107, 4, 253, 1) 0%,
+        rgba(44, 0, 118, 1) 100%
+    );
     color: #f3f1ff;
     border: 1px solid #d9ceff;
     border-radius: 10px;
     height: auto;
 }
 
-
-
-.stores-section .card{
-    background-image: linear-gradient(0deg,rgba(107,4,253,1) 0%, rgba(44,0,118,1) 100%);
+.stores-section .card {
+    background-image: linear-gradient(
+        0deg,
+        rgba(107, 4, 253, 1) 0%,
+        rgba(44, 0, 118, 1) 100%
+    );
     color: #f3f1ff;
     border: 1px solid #d9ceff;
     border-radius: 10px;
 }
 
-
-footer{
-    background: linear-gradient(90deg, rgba(130,117,255,1) 0%, rgba(107,4,253,1) 35%, rgba(44,0,118,1) 100%);
-    border-top: 3px solid transparent; 
+footer {
+    background: linear-gradient(
+        90deg,
+        rgba(130, 117, 255, 1) 0%,
+        rgba(107, 4, 253, 1) 35%,
+        rgba(44, 0, 118, 1) 100%
+    );
+    border-top: 3px solid transparent;
     border-image: linear-gradient(to right, #7916ff, #d9ceff) 1;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
 }
 
-textarea{
+textarea {
     resize: none;
 }
 
-.card-body, .product-card {
-    background-image: linear-gradient(0deg,rgba(107,4,253,1) 0%, rgba(44,0,118,1) 100%);
+.card-body,
+.product-card {
+    background-image: linear-gradient(
+        0deg,
+        rgba(107, 4, 253, 1) 0%,
+        rgba(44, 0, 118, 1) 100%
+    );
     border-radius: 10px;
 }
 
-.card-img{
+.card-img {
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
-.card-img:hover{
+.card-img:hover {
     transform: scale(1.1);
     opacity: 0.6;
 }
 
-.mapa iframe{
+.mapa iframe {
     border-radius: 40px;
 }
 
-.criptos img{
+.criptos img {
     width: 935px;
     height: 236px;
 }
@@ -230,8 +250,12 @@ textarea{
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .alert {
@@ -241,7 +265,7 @@ textarea{
 .dropdown-toggle::after {
     display: none;
 }
-.collapse-user .dropdown-menu{
+.collapse-user .dropdown-menu {
     left: auto;
     top: auto;
     right: 1px;
@@ -250,14 +274,19 @@ textarea{
     display: flex;
 }
 
-.user-btn:hover{
+.user-btn:hover {
     border: 1px solid #f3f3f3 !important;
 }
-.dropdown-item.active, .dropdown-item:active {
+.dropdown-item.active,
+.dropdown-item:active {
     background-color: #f3f3f3;
 }
-.dropdown-menu{
-    background-image: linear-gradient(0deg,rgba(107,4,253,1) 0%, rgba(44,0,118,1) 100%);
+.dropdown-menu {
+    background-image: linear-gradient(
+        0deg,
+        rgba(107, 4, 253, 1) 0%,
+        rgba(44, 0, 118, 1) 100%
+    );
     color: #f3f3f3;
     border-radius: 5px;
     border: 1px solid #f3f3f3;
@@ -276,31 +305,74 @@ a .logo-salir path {
     fill: #f3f3f3 !important;
 }
 
-a:hover .logo-salir path{
+a:hover .logo-salir path {
     fill: #2c0076 !important;
 }
 
-.card-product-body{
-    background-color: #7916ff;
-    flex: 1 1 auto;
-    border-radius: 10px;
-}
-
-.card-product{
+.card-product {
     border-radius: 10px !important;
 }
 .card-product > div > img {
     border-radius: 10px !important;
-
 }
-.card-product .card-product-body h6{
+.card-product .card-product-body h6 {
     color: rgb(0 255 137);
     font-weight: bold;
 }
 
 .card-product-body .btn {
-    background-color: rgb(235 22 124)!important;
+    background-color: rgb(235 22 124) !important;
 }
 .card-product-body .btn:hover {
-    background-color: rgba(141, 12, 74, 0.909)!important;
+    background-color: rgba(141, 12, 74, 0.909) !important;
+}
+
+.card-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background-color: #7916ff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 12px 3px rgba(44, 0, 118, 0.95);
+    -webkit-box-shadow: 0px 0px 12px 3px rgba(44, 0, 118, 0.95);
+    -moz-box-shadow: 0px 0px 12px 3px rgba(44, 0, 118, 0.95);
+}
+
+.card-product img {
+    background-color: white;
+    object-fit: contain;
+    height: 280px;
+    width: 100%;
+}
+
+.card-product-body {
+    padding: 15px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.card-product p {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.card-product-body h5,
+.card-product-body p,
+.card-product-body h6 {
+    margin-bottom: 0.5rem;
+}
+
+.d-flex.align-items-stretch {
+    display: flex;
+    align-items: stretch;
 }
