@@ -33,12 +33,12 @@
     box-shadow: 0px 0px 2px #848484;
 }
 
-.form-group ,.registration-form-group{
+.form-group-login ,.registration-form-group{
     margin-bottom: 25px;
     position: relative;
 }
 
-.form-group input, .registration-form-group input{
+.form-group-login input, .registration-form-group input{
     height: 45px;
     border-radius: 5px;
     border: 0;
@@ -46,7 +46,7 @@
     padding-left: 54px;
 }
 
-.form-group::before {
+.form-group-login::before {
     content: "\f2bd";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
@@ -57,7 +57,7 @@
     padding-top: 4px;
 }
 
-.form-group:last-of-type::before {
+.form-group-login:last-of-type::before {
     content: "\f4f5";
     font-family: "Font Awesome 5 Brands";
     position: absolute;

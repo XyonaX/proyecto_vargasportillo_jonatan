@@ -1,6 +1,6 @@
 </main>
 <footer class="container-fluid bg-dark text-white mt-auto">
-    <div class="container py-4">
+    <div class="container-fluid py-4">
         <div class="row">
             <div class="col-md-3">
                 <h5>Sobre Nosotros</h5>

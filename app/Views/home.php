@@ -5,7 +5,7 @@
         <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center" id="button">
           <h1 class="animate__animated animate__fadeInDown">Bienvenidos a UnnePhones</h1>
           <p class="animate__animated animate__fadeInUp">Explora los ultimos smartphones y tecnologias de punta.</p>
-          <a href="<?php echo base_url('/store') ?>" class="btn btn-primary">Comprar</a>
+          <a href="<?php echo base_url('/products') ?>" class="btn btn-primary">Comprar</a>
         </div>
       </div>
     </div>
@@ -60,42 +60,23 @@
     </div>
 
     <section class="featured-products my-5">
-      <div class="container-fluid">
+    <div class="container-fluid">
         <h2 class="text-center">Productos Destacados</h2>
         <div class="row">
-          <!-- Productos -->
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="product-card d-flex justify-content-center align-items-center flex-column p-1">
-              <img src="assets/images/Samsung_S23_FE.webp" class="img-fluid card-img" alt="Producto 1">
-              <h4 class="">Samsung s23 FE</h4>
-              <p class="card-cel-text">El Samsung Galaxy S23 FE es un smartphone de alta gama con pantalla AMOLED, potente rendimiento,
-                cámaras versátiles y características premium como resistencia al agua y carga inalámbrica.</p>
-              <a href="#" class="btn btn-primary mt-3">Ver detalles</a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="product-card d-flex justify-content-center align-items-center flex-column p-1">
-              <img src="assets/images/i_Phone_14_Starlight.webp" class="img-fluid card-img" alt="Producto 2">
-              <h4>Iphone 14</h4>
-              <p class="card-cel-text">El iPhone 14 es el último lanzamiento de Apple que combina un diseño elegante con un potente rendimiento.
-                Con una pantalla OLED de alta calidad, cámaras mejoradas y características innovadoras, el iPhone 14 ofrece una experiencia excepcional
-                para los usuarios exigentes.</p>
-              <a href="#" class="btn btn-primary mb-2">Ver detalles</a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="product-card d-flex justify-content-center align-items-center flex-column p-1">
-              <img src="assets/images/Samsung_Galaxy_Z_Flip5.webp" class="img-fluid card-img" alt="Producto 3">
-              <h4>Samsung Z Flip5</h4>
-              <p class="card-cel-text">El Samsung Z Flip 5 es un smartphone innovador que combina un diseño elegante con una funcionalidad única.
-                Con su pantalla plegable, el Z Flip 5 ofrece una experiencia versátil para los usuarios.
-                Con características de alta gama y un diseño premium.</p>
-              <a href="#" class="btn btn-primary mb-2">Ver detalles</a>
-            </div>
-          </div>
+            <?php foreach ($productos_destacados as $producto) : ?>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card d-flex justify-content-center align-items-center flex-column p-1">
+                        <img src="<?= base_url('assets/uploads/' . $producto['nombre_imagen']) ?>" class="img-fluid card-img my-2" alt="<?= esc($producto['nombre_producto']) ?>">
+                        <h4><?= esc($producto['nombre_producto']) ?></h4>
+                        <p class="card-cel-text"><?= esc($producto['desc_producto']) ?></p>
+                        <a href="products" class="btn btn-primary mt-3">Ver detalles</a>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
+
   </section>
   <section class="features-section animate__animated animate__fadeIn">
     <div class="container-fluid mt-5">

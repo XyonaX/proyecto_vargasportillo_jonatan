@@ -51,7 +51,7 @@
                                         </div>
                                     </td>
                                     <td class="text-center">
-                                        <a class="btn btn-<?= $producto['activo'] ? 'danger' : 'success' ?> cambiar-estado text-white" href="<?= base_url('gestionProductos/activar_desactivar/' . $producto['id_producto']) ?>">
+                                        <a class="btn btn-<?= $producto['activo'] ? 'danger' : 'success' ?> cambiar-estado " href="<?= base_url('gestionProductos/activar_desactivar/' . $producto['id_producto']) ?>">
                                             <?= $producto['activo'] ? 'Desactivar' : 'Activar' ?>
                                         </a>
                                     </td>
@@ -254,7 +254,7 @@
                 icon: "success",
                 text: "Cambiando estado...",
                 showConfirmButton: false,
-                timer: 1500,
+                timer: 1500
             }).then(() => {
                 window.location.href = href;
             });

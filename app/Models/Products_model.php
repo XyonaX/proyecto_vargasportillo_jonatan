@@ -20,4 +20,13 @@ class Products_model extends Model
             ->where('cantidad_producto >', 0)
             ->paginate($perPage, 'default');
     }
+
+    public function findFeaturedProducts($limit)
+    {
+        return $this->where('activo', 1)
+                    ->orderBy('id_producto', 'DESC') 
+                    ->limit($limit)
+                    ->find();
+                    
+    }
 }

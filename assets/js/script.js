@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             const precio = button.getAttribute('data-precio');
             const cantidad = button.getAttribute('data-cantidad');
             const activo = button.getAttribute('data-activo');
+            const imagen = button.getAttribute('data-imagen')
 
             document.getElementById('editProductId').value = productId;
             document.getElementById('edit_nombre').value = nombre;
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             document.getElementById('edit_precio').value = precio;
             document.getElementById('edit_cantidad').value = cantidad;
             document.getElementById('edit_activo').value = activo;
+            document.getElementById('edit_imagen').value = imagen;
         });
     });
 });

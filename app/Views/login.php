@@ -19,7 +19,7 @@
                     <img src="https://i.ibb.co/C0z9mg3/face.jpg" alt="profile photo" />
                 </div>
                 <?= form_open('login', ['class' => 'form-login p-2 border rounded-2 mb-3 login-form-group mb-3', 'id' => 'loginForm']) ?>
-                    <div class="form-group mb-3">
+                    <div class="form-group-login mb-3">
                         <?= form_input([
                             'type' => 'email',
                             'name' => 'email',
@@ -32,7 +32,7 @@
                             <div class="alert alert-danger mt-1" role="alert"><?= esc($validation->getError('email')) ?></div>
                         <?php endif; ?>
                     </div>
-                    <div class="form-group mb-3">
+                    <div class="form-group-login mb-3">
                         <?= form_input([
                             'type' => 'password',
                             'name' => 'password',

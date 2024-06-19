@@ -80,7 +80,7 @@ class Carrito extends BaseController
         foreach ($cart1 as $item) {
             $producto = $productos->where('id_producto', $item['id'])->first();
             if ($producto['cantidad_producto'] < $item['qty']) {
-                return redirect()->route('carrito');
+                return redirect()->route('carrito')->with('err','No se pudo realizar la venta porque no existe stock suficiente');
             }
         }
 
@@ -110,6 +110,6 @@ class Carrito extends BaseController
             $detalle->insert($detalle_venta);
         }
         $cart->destroy();
-        return redirect()->route('products');
+        return redirect()->route('carrito')->with('success','La compra se realizo con exito');
     }
 }

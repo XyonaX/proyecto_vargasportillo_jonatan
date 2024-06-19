@@ -4,6 +4,16 @@
     <div class="container-fluid d-flex flex-column text-center">
         <h2 class="text-center">Carrito de compras</h2>
         <div class="row">
+            <?php if (session('err')) : ?>
+                <div class="alert alert-danger mt-3" role="alert">
+                    <?= session('err') ?>
+                </div>
+            <?php endif; ?>
+            <?php if (session('success')) : ?>
+                <div class="alert alert-success mt-3" role="alert">
+                    <?= session('success') ?>
+                </div>
+            <?php endif; ?>
             <?php if (empty($cart_contents)) { ?>
                 <h2 class="text-center alert-danger">Carrito está vacío</h2>
             <?php } else { ?>
