@@ -60,22 +60,28 @@
     </div>
 
     <section class="featured-products my-5">
-    <div class="container-fluid">
+      <div class="container-fluid">
         <h2 class="text-center">Productos Destacados</h2>
         <div class="row">
-            <?php foreach ($productos_destacados as $producto) : ?>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="product-card d-flex justify-content-center align-items-center flex-column p-1">
-                        <img src="<?= base_url('assets/uploads/' . $producto['nombre_imagen']) ?>" class="img-fluid card-img my-2" alt="<?= esc($producto['nombre_producto']) ?>">
-                        <h4><?= esc($producto['nombre_producto']) ?></h4>
-                        <p class="card-cel-text"><?= esc($producto['desc_producto']) ?></p>
-                        <a href="products" class="btn btn-primary mt-3">Ver detalles</a>
-                    </div>
+          <?php foreach ($productos_destacados as $producto) : ?>
+            <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+              <div class="card card-product flex-fill">
+                <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
+                  <img src="<?= base_url('assets/uploads/' . esc($producto['nombre_imagen'])) ?>" class="w-100 img-fluid" alt="<?= esc($producto['nombre_producto']) ?>" />
                 </div>
-            <?php endforeach; ?>
+                <div class="card-product-body d-flex flex-column justify-content-between align-items-center">
+                  <h5 class="card-title mb-3 text-white"><?= esc($producto['nombre_producto']) ?></h5>
+                  <p class="text-white text-center"><?= esc($producto['desc_producto']) ?></p>
+                  <h6 class="mb-3">$<?= esc($producto['precio_producto']) ?></h6>
+                  <a href="products" class="btn btn-primary mt-3">Ver detalles</a>
+                </div>
+              </div>
+            </div>
+          <?php endforeach; ?>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
+
 
   </section>
   <section class="features-section animate__animated animate__fadeIn">
